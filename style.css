@@ -22,8 +22,21 @@ ul, li {
     padding-top: 0;
 }
 
+p, ul {
+    font-size: 18px;
+    text-indent: 15px;
+    font-family: 'Shadows Into Light';
+    color: rgb(4, 230, 117);
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
 body {
     background-image: linear-gradient(to bottom right, rgb(196, 255, 255), rgb(204, 255, 255));
+}
+
+hr {
+    border: 1px solid red;
 }
 
 nav {
@@ -70,14 +83,30 @@ nav li a:hover {
 
 .subtitle {
     text-align: center;
+}
+
+#description .subtitle {
     color: magenta;
 }
 
-p {
-    font-size: 18px;
-    text-indent: 15px;
-    font-family: 'Shadows Into Light';
-    color: rgb(4, 230, 117);
-    margin-right: 10px;
-    margin-left: 10px;
+#popularity li {
+    color: red;
+    text-indent: 300px;
+    list-style: circle;
+}
+
+#ender {
+    text-indent: 0;
+}
+
+#popularity .subtitle {
+    color:blueviolet;
+}
+
+#popularity p {
+    color:blue;
+}
+
+#fairness .subtitle {
+    color:green;
 }
