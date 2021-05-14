@@ -73,6 +73,36 @@ h2 {
     display: inline-block;
 }
 
-input:hover, input:checked {
-    outline: gold;
+input:hover {
+    cursor: e-resize;
+}
+
+#range {
+    width: 400px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#rate1 p {
+    width:100vw;
+    text-align: center;
+    font-family: New Tegomin;
+    font-size: 20px;
+    color: coral;
+}
+
+#rate1 {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 1px solid aqua;
+    margin-bottom: 10px;;
+}
+
+form {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    flex-wrap: wrap;
 }
