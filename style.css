@@ -92,7 +92,7 @@ nav li a:hover {
 #popularity li {
     color: red;
     text-indent: 300px;
-    list-style: circle;
+    list-style: circle !important;
 }
 
 #ender {
@@ -109,4 +109,8 @@ nav li a:hover {
 
 #fairness .subtitle {
     color:green;
+}
+
+#fairness p {
+    color: rgb(255, 0, 140);
 }
