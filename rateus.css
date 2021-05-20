@@ -9,7 +9,7 @@ nav {
     position:fixed;
     width:100vw;
     margin-top: 1px;
-
+    z-index:100;
 }
 
 nav:hover {
@@ -20,12 +20,13 @@ nav * {
     font-size: 25px;
     font-family: 'New Tegomin';
     text-align: center;
+    z-index: inherit;
 }
 
 nav li {
     list-style: none;
     display: inline-block;
-    padding: 0 150px;
+    padding: 0 calc(1 / 10 * 100vw);
 }
 
 nav li a {
@@ -69,10 +70,6 @@ h2 {
     margin-bottom:55px;
 }
 
-#stars input {
-    display: inline-block;
-}
-
 input:hover {
     cursor: e-resize;
 }
@@ -83,7 +80,7 @@ input:hover {
     margin-bottom: 10px;
 }
 
-#rate1 p {
+#rate p {
     width:100vw;
     text-align: center;
     font-family: New Tegomin;
@@ -91,13 +88,13 @@ input:hover {
     color: coral;
 }
 
-#rate1 {
+#rate {
     display: flex;
     margin: 0 auto;
     justify-content: center;
     flex-wrap: wrap;
     border: 1px solid aqua;
-    margin-bottom: 10px;;
+    margin-bottom: 5px;
 }
 
 form {
@@ -105,4 +102,51 @@ form {
     margin: 0 auto;
     justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+#why p {
+    width:100vw;
+    text-align: center;
+    font-family: New Tegomin;
+    font-size: 20px;
+    color: coral;
+}
+
+#why {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 1px solid aqua;
+    margin-bottom: 10px;
+}
+
+textarea {
+    margin-bottom:10px;
+    font-family: Pattaya, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:red;
+    border-radius: 10px;
+    outline: 1px solid red;
+    border:5px double blue;
+    transition: all 250ms;
+    background-color: rgb(79, 255, 167);
+}
+
+textarea:hover {
+    outline: 2.5px solid red;
+    border:3px double blue;
+    background-color: rgb(123, 255, 189);
+}
+
+textarea:focus {
+    outline: 5px solid red;
+    border:1px double blue;
+    background-color: rgb(176, 255, 216);
+}
+
+input[type=submit] {
+    background-color: steelblue;
+    color: whitesmoke;
+    border: 3px outset blueviolet;
 }

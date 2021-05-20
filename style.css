@@ -60,7 +60,7 @@ nav * {
 nav li {
     list-style: none;
     display: inline-block;
-    padding: 0 150px;
+    padding: 0 10vw;
 }
 
 nav li a {

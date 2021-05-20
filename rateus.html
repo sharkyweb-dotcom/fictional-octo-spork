@@ -4,7 +4,7 @@
         <title>Catan Fair Map Builder</title>
         <link href="./rateus.css" type="text/css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Geostar&family=Shadows+Into+Light&family=Girassol&family=New+Tegomin&family=Reggae+One&family=Codystar&family=Itim&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Pattaya&family=Geostar&family=Shadows+Into+Light&family=Girassol&family=New+Tegomin&family=Reggae+One&family=Codystar&family=Itim&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -22,13 +22,19 @@
         </div>
 
         <form action="https://formspree.io/f/mqkwpqgp" method='POST'>
-            <div id='rate1'>
+            <div id='rate'>
                 <p>Worst on the left, best on the right!</p>
                 <br>
                 <br>
-                <br>
-                <input type="range" name='1' min='0' max='10' id='range'>
+                <input type="range" name='Rating' min='0' max='20' id='range'>
             </div>
+            <div id='why'>
+                <p>Why did you give this rating?</p>
+                <br>
+                <br>
+                <textarea name="Why" id="inputwhy" cols="30" rows="5"></textarea>
+            </div>
+            <br>
             <input type="submit">
         </form>
     </body>
