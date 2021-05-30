@@ -3,6 +3,7 @@
     box-sizing: border-box;
 }
 
+/*Navigation Section*/
 nav {
     background-color: yellow;
     height: 40px;
@@ -26,7 +27,7 @@ nav * {
 nav li {
     list-style: none;
     display: inline-block;
-    padding: 0 calc(1 / 10 * 100vw);
+    padding: 0 7.5vw;
 }
 
 nav li a {
@@ -43,6 +44,7 @@ ul, li {
     margin-top:0;
 }
 
+/*Opening Section*/
 body {
     background-image: linear-gradient(to bottom right, rgb(196, 255, 255), rgb(204, 255, 255));
 }
@@ -70,7 +72,10 @@ h2 {
     margin-bottom:55px;
 }
 
-input:hover {
+/*Input Section*/
+
+/*Rating*/
+#range:hover {
     cursor: e-resize;
 }
 
@@ -90,11 +95,10 @@ input:hover {
 
 #rate {
     display: flex;
-    margin: 0 auto;
+    margin: 0 auto !important;
     justify-content: center;
     flex-wrap: wrap;
     border: 1px solid aqua;
-    margin-bottom: 5px;
 }
 
 form {
@@ -105,32 +109,50 @@ form {
     justify-content: center;
 }
 
+/*Why they gave this rating*/
 #why p {
     width:100vw;
     text-align: center;
     font-family: New Tegomin;
     font-size: 20px;
-    color: coral;
+    color: magenta;
 }
 
 #why {
     display: flex;
-    margin: 0 auto;
+    margin: 0 auto !important;
     justify-content: center;
     flex-wrap: wrap;
     border: 1px solid aqua;
-    margin-bottom: 10px;
 }
 
+/*Suggestions*/
+#suggestion p {
+    width:100vw;
+    text-align: center;
+    font-family: New Tegomin;
+    font-size: 20px;
+    color: royalblue;
+}
+
+#suggestion {
+    display: flex;
+    margin: 0 auto 10px auto !important;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 1px solid aqua;
+}
+
+/*Both*/
 textarea {
     margin-bottom:10px;
     font-family: Pattaya, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color:red;
-    border-radius: 10px;
-    outline: 1px solid red;
-    border:5px double blue;
+    border-radius: 1px;
     transition: all 250ms;
     background-color: rgb(79, 255, 167);
+    color:red;
+    outline: 1px solid red;
+    border:5px double blue;
 }
 
 textarea:hover {
@@ -145,8 +167,68 @@ textarea:focus {
     background-color: rgb(176, 255, 216);
 }
 
+/*Submission*/
 input[type=submit] {
     background-color: steelblue;
     color: whitesmoke;
     border: 3px outset blueviolet;
+    cursor:pointer;
+    transition:transform 200ms ease-in;
+    display: block;
+}
+
+input[type=submit]:hover {
+    transform:scale(1.1);
+}
+
+
+/*Media Queries*/
+@media only screen and (max-width:50px) {
+    nav * {
+        font-size:7.5px;
+    }
+
+    nav li {
+        padding: 0 0.125vw;
+    }
+}
+
+@media only screen and (max-width:100px) {
+    nav * {
+        font-size:12.5px;
+    }
+
+    nav li {
+        padding: 0 1vw;
+    }
+}
+
+@media only screen and (max-width:300px) {
+    nav * {
+        font-size:20px;
+    }
+
+    nav li {
+        padding: 0 3vw;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    nav * {
+        font-size:22.5px;
+    }
+
+    nav li {
+        padding: 0 4vw;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    nav * {
+        font-size:27.5px;
+    }
+
+    nav li {
+        padding: 0 6vw;
+    }
 }
