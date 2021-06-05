@@ -27,12 +27,16 @@ nav * {
 nav li {
     list-style: none;
     display: inline-block;
-    padding: 0 7.5vw;
+    padding: 0 5%;
 }
 
 nav li a {
     color: red;
     text-decoration: none;
+}
+
+nav li a:visited {
+    color: rgb(234, 0, 255);
 }
 
 nav li a:hover {
@@ -181,15 +185,10 @@ input[type=submit]:hover {
     transform:scale(1.1);
 }
 
-
 /*Media Queries*/
 @media only screen and (max-width:50px) {
     nav * {
         font-size:7.5px;
-    }
-
-    nav li {
-        padding: 0 0.125vw;
     }
 }
 
@@ -197,29 +196,17 @@ input[type=submit]:hover {
     nav * {
         font-size:12.5px;
     }
-
-    nav li {
-        padding: 0 1vw;
-    }
 }
 
 @media only screen and (max-width:300px) {
     nav * {
         font-size:20px;
     }
-
-    nav li {
-        padding: 0 3vw;
-    }
 }
 
 @media only screen and (max-width:500px) {
     nav * {
         font-size:22.5px;
-    }
-
-    nav li {
-        padding: 0 4vw;
     }
 }
 
@@ -229,6 +216,6 @@ input[type=submit]:hover {
     }
 
     nav li {
-        padding: 0 6vw;
+        padding: 0.125%;
     }
 }

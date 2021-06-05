@@ -60,12 +60,16 @@ nav * {
 nav li {
     list-style: none;
     display: inline-block;
-    padding: 0 10vw;
+    padding: 0 5%;
 }
 
 nav li a {
     color: red;
     text-decoration: none;
+}
+
+nav li a:visited {
+    color: rgb(234, 0, 255);
 }
 
 nav li a:hover {
@@ -113,4 +117,39 @@ nav li a:hover {
 
 #fairness p {
     color: rgb(255, 0, 140);
+}
+
+/*Media Queries*/
+@media only screen and (max-width:50px) {
+    nav * {
+        font-size:7.5px;
+    }
+}
+
+@media only screen and (max-width:100px) {
+    nav * {
+        font-size:12.5px;
+    }
+}
+
+@media only screen and (max-width:300px) {
+    nav * {
+        font-size:20px;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    nav * {
+        font-size:22.5px;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    nav * {
+        font-size:27.5px;
+    }
+
+    nav li {
+        padding: 0.125%;
+    }
 }
