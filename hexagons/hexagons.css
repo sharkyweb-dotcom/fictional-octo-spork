@@ -75,3 +75,38 @@ h2 {
     top:40px;
     margin-bottom:55px;
 }
+
+/*The Board*/
+.hex {
+    float: left;
+    margin-left: 3px;
+    margin-bottom: -26px;
+}
+.hex .top {
+    width: 0;
+    border-bottom: 30px solid #6C6;
+    border-left: 52px solid transparent;
+    border-right: 52px solid transparent;
+}
+.hex .middle {
+    width: 104px;
+    height: 60px;
+    background: #6C6;
+}
+.hex .bottom {
+    width: 0;
+    border-top: 30px solid #6C6;
+    border-left: 52px solid transparent;
+    border-right: 52px solid transparent;
+}
+.hex-row {
+    clear: left;
+}
+
+.hex-row.first, .hex-row.fifth {
+    margin-left: 106px;
+}
+
+.hex-row.second, .hex-row.fourth {
+    margin-left: 53px;
+}
