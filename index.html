@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Geostar&family=Shadows+Into+Light&family=Girassol&family=New+Tegomin&family=Reggae+One&family=Codystar&family=Itim&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body id='main' class='before'>
+    <script src='./script.js'></script>
     <nav>
         <ul>
             <li><a href="#">Overview</a></li>
@@ -18,13 +19,13 @@
         </ul>
     </nav>
     <div id='opening'>
-    <h1>Settlers of Catan</h1>
+    <h1 id='head'>Settlers of Catan</h1>
     <h2 id='mainsub'>Need a map to play Catan and bored with the one map in the instructions? We offer fair, quality maps for free!</h2>
     </div>
 
-    <div id='description'>
-        <h2 class='subtitle'>Why We Need Maps</h2>
-        <p>
+    <div class='container' id='description'>
+        <h2 id='sub1' class='subtitle'>Why We Need Maps</h2>
+        <p id='p1'>
             Catan is a game in which settlers try to claim the most victory points by buiding settlements, roads, and cities. In the game, players
             are settlers trying to colonize an island full of resources named Catan. Players start with two settlements and two roads each. Players recieve different
             very different resources depending on where their settlements are at. This brings up the question of how to make a fair setup. The booklet
@@ -33,29 +34,35 @@
         </p>
     </div>
     <hr>
-    <div id='popularity'>
-        <h2 class='subtitle'>A Growing Popularity</h2>
-        <p>
+    <div class='container' id='popularity'>
+        <h2 id='sub2' class='subtitle'>A Growing Popularity</h2>
+        <p id='p2'>
             The amount of players who play this wonderful strategy game has been increasing since the game was released. There have even been
             world and national championships to see who can colonize the wonderful island th quizkest and the best. There have been 32 billion
             game units sold. The makers have released many expansion and extension packs due to the demand of Catan fans for more fun. These include but are not limited to: 
         </p>
         <ul>
-            <li>Catan: Seafarers (with extension)</li>
-            <li>Catan: Cities and Knights</li>
-            <li>Catan: Traders and Barbarians</li>
+            <li id='li1'>Catan: Seafarers (with extension)</li>
+            <li id='li2'>Catan: Cities and Knights</li>
+            <li id='li3'>Catan: Traders and Barbarians</li>
         </ul>
         <p id='ender'>
             As the popularity of the game increases, the question continues to be asked<strong>:</strong> how do you decide on a fair gameboard?
         </p>
     </div>
     <hr>
-    <div id='fairness'>
-        <h2 class='subtitle'>What we do to Make our Catan Maps Fair</h2>
-        <p>We do many things to make our Catan Maps fair. Oe thing we do is making everybody's settlements the same distance away from each other.
+    <div class='container' id='fairness'>
+        <h2 id='sub3' class='subtitle'>What we do to Make our Catan Maps Fair</h2>
+        <p id='p3'>We do many things to make our Catan Maps fair. Oe thing we do is making everybody's settlements the same distance away from each other.
         Another thing that we do to make our catan maps fair is make sure everybody has the same propability of getting resources. The dots on
         each number should add up to be the same number. We also make sure nobody's roads are blocked by the distance rule of other settlements.
         </p>
+    </div>
+    <div id='modeChanger'>
+    <button class='light changer' onclick="lightMode()">Click to change to Light Mode</button>
+    <button class='night changer' onclick="nightMode()">Click to change to Night Mode</button>
+    <button class='color changer' onclick="colorMode()">Click to change to Color Mode</button>
+    <button class='neon changer' onclick="neonMode()">Click to change to Neon Mode</button>
     </div>
 </body>
 

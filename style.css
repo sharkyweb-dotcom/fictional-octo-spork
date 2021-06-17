@@ -1,14 +1,41 @@
+:root {
+    --night-background:linear-gradient(to bottom right, black, rgb(160, 160, 160));
+    --neon-background:linear-gradient(to bottom right, black, black);
+    --color-background:linear-gradient(to bottom right, rgb(196, 255, 255), rgb(204, 255, 255));
+    --light-background:linear-gradient(to bottom right, rgb(255, 230, 175), rgb(249, 255, 214));
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-h1 {
+.before:not(.changer) {
+    background: white !important;
+}
+
+.before *:not(.changer) {
+    color: black !important;
+}
+
+.container {
+    flex-grow: 1;
+}
+
+#fairness {
+    height:1000px;
+}
+
+#head {
     font-size: 30px;
     padding-bottom: 0;
     margin-bottom: 0;
     color: red;
+}
+
+.light-text {
+    filter:brightness(70%);
 }
 
 h2 {
@@ -32,7 +59,23 @@ p, ul {
 }
 
 body {
-    background-image: linear-gradient(to bottom right, rgb(196, 255, 255), rgb(204, 255, 255));
+    background-image: var(--light-background);
+}
+
+.color-main {
+    background-image: var(--color-background);
+}
+
+.light-main {
+    background-image: var(--light-background);
+}
+
+.night-main {
+    background-image: var(--night-background);
+}
+
+.neon-main {
+    background-image: var(--neon-background);
 }
 
 hr {
@@ -117,6 +160,51 @@ nav li a:hover {
 
 #fairness p {
     color: rgb(255, 0, 140);
+}
+
+/*Changing Style Mode*/
+#modeChanger {
+    position:fixed;
+    bottom:5px;
+    right:10px;
+    height:125px;
+    width:300px;
+    display: flex;
+}
+
+.changer {
+    padding: auto;
+    width:100%;
+    flex-grow:1;
+    border-width: 1px;
+}
+
+.changer:hover {
+    border-width: 3px;
+}
+
+.night {
+    background-color: black;
+    color: white;
+}
+
+.light {
+    background-color: wheat;
+    color: teal;
+    border-color: tomato;
+}
+
+.color {
+    background: linear-gradient(to bottom, rgb(60, 60, 255), rgb(87, 213, 255));
+    color: #ff2fff;
+    border-color: rgb(232, 109, 248);
+}
+
+.neon {
+    background-color: black;
+    color:rgb(255, 46, 192);
+    font-family:'Shadows Into Light';
+    border-color: rgb(71, 255, 47);
 }
 
 /*Media Queries*/
