@@ -1,8 +1,12 @@
 :root {
-    --night-background:linear-gradient(to bottom right, black, rgb(160, 160, 160));
+    /*Main background*/
+    --night-background:linear-gradient(to bottom right, #2b2929, rgb(128, 127, 127));
     --neon-background:linear-gradient(to bottom right, black, black);
     --color-background:linear-gradient(to bottom right, rgb(196, 255, 255), rgb(204, 255, 255));
     --light-background:linear-gradient(to bottom right, rgb(255, 230, 175), rgb(249, 255, 214));
+    /*Filters*/
+    --light-filter:brightness(70%);
+    --neon-filter:brightness(130%);
 }
 
 * {
@@ -17,6 +21,7 @@
 
 .before *:not(.changer) {
     color: black !important;
+    text-shadow:none !important;
 }
 
 .container {
@@ -35,10 +40,19 @@
 }
 
 .light-text {
-    filter:brightness(70%);
+    filter:var(--light-filter);
 }
 
-h2 {
+.neon-text {
+    filter:var(--neon-filter);
+}
+
+.night-text {
+    color:white !important;
+    text-shadow: 2px 2px 5px black !important;
+}
+
+#mainsub {
     font-size: 25px;
     padding-top: 0;
     margin-top: 10px;
@@ -151,7 +165,7 @@ nav li a:hover {
 }
 
 #popularity p {
-    color:blue;
+    color:rgb(68, 211, 255);
 }
 
 #fairness .subtitle {
@@ -168,7 +182,7 @@ nav li a:hover {
     bottom:5px;
     right:10px;
     height:125px;
-    width:300px;
+    width:375px;
     display: flex;
 }
 
@@ -198,6 +212,7 @@ nav li a:hover {
     background: linear-gradient(to bottom, rgb(60, 60, 255), rgb(87, 213, 255));
     color: #ff2fff;
     border-color: rgb(232, 109, 248);
+    text-shadow: 0 0 1px purple;
 }
 
 .neon {
@@ -205,6 +220,12 @@ nav li a:hover {
     color:rgb(255, 46, 192);
     font-family:'Shadows Into Light';
     border-color: rgb(71, 255, 47);
+}
+
+.default {
+    background: white;
+    color: black;
+    border-color: black;
 }
 
 /*Media Queries*/
