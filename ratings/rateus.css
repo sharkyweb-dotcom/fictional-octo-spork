@@ -170,16 +170,16 @@ textarea:focus {
 }
 
 /*Submission*/
-input[type=submit] {
+#check {
     background-color: steelblue;
     color: whitesmoke;
     border: 3px outset blueviolet;
     cursor:pointer;
     transition:transform 200ms ease-in;
-    display: block;
+    text-align: center;
 }
 
-input[type=submit]:hover {
+#check:hover {
     transform:scale(1.1);
 }
 

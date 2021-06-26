@@ -1,4 +1,4 @@
-// Done
+// Light
 function lightMode() {
     document.getElementById("main").setAttribute("class", 'light-main')
     lightList=["head", "mainsub", "sub1", 'p1', 'sub2', 'p2', 'li1', 'li2', 'li3', 'ender', 'sub3', 'p3'];
@@ -10,7 +10,7 @@ function lightMode() {
         itemOfLight.style.textShadow=('none');
     })
 }
-// Done
+// Neon
 function neonMode() {
     document.getElementById("main").setAttribute("class", 'neon-main');
     neonList=['nav1','nav2','nav3','nav4',"head", "mainsub", "sub1", 'p1', 'sub2', 'p2', 'li1', 'li2', 'li3', 'ender', 'sub3', 'p3'];
@@ -22,7 +22,7 @@ function neonMode() {
         document.getElementById(neonItem).style.textShadow=`0 0 17px ${itemColor}`;
     })
 }
-// Done
+// Night
 function nightMode() {
     document.getElementById("main").setAttribute("class", 'night-main');
     nightList=["head", "mainsub", "sub1", 'p1', 'sub2', 'p2', 'li1', 'li2', 'li3', 'ender', 'sub3', 'p3'];
@@ -33,7 +33,7 @@ function nightMode() {
         itemOfNight.classList.remove('neon-text');
     })
 }
-// Incomplete
+// Color
 function colorMode() {
     document.getElementById("main").setAttribute("class", 'color-main');
     colorItemList=["head", "mainsub", "sub1", 'p1', 'sub2', 'p2', 'li1', 'li2', 'li3', 'ender', 'sub3', 'p3'];
@@ -41,7 +41,7 @@ function colorMode() {
     for (let i=0; i<colorList.length; i++) {
         if (i===2) {
             document.getElementById(colorItemList[i]).style.color=colorList[i];
-            document.getElementById(colorItemList[i]).style.textShadow='0 0 1px blue';
+            document.getElementById(colorItemList[i]).style.textShadow='0 0 3px blue';
         } else {
             document.getElementById(colorItemList[i]).style.color=colorList[i];
             document.getElementById(colorItemList[i]).style.textShadow='none';
@@ -51,7 +51,7 @@ function colorMode() {
         document.getElementById(colorItemList[i]).classList.remove('night-text');
     }
 }
-// Done
+// Default
 function defaultMode() {
     document.getElementById("main").setAttribute("class", "before");
     defaultList=["head", "mainsub", "sub1", 'p1', 'sub2', 'p2', 'li1', 'li2', 'li3', 'ender', 'sub3', 'p3'];
