@@ -1,5 +1,4 @@
 function addImg() {
-    document.getElementById('refreshMessage').innerHTML='Refresh to get a new map'
     brickCount=[0,3];
     wheatCount=[0,4];
     oreCount=[0,3];
@@ -8,14 +7,18 @@ function addImg() {
     desertCount=[0,1];
     for (let i=0; i<19;i++) {
         randomTile();
-    }
+    };
+    document.getElementById('refreshMessage').innerHTML='Refresh to get a new map';
+    alert('Refresh to get a new map');
 }
+resourceList=[];
 const randomTile=()=>{
         let randomNum=Math.floor(Math.random()*6);
         const hexagon=document.getElementById("imgHex");
         switch (randomNum) {
             case 0: 
                 if (brickCount[0]<brickCount[1]) {
+                    resourceList.push('brick')
                     hexagon.setAttribute("class", 'brick');
                     hexagon.setAttribute("id", 'used');
                     brickCount[0]++
@@ -24,7 +27,8 @@ const randomTile=()=>{
                 }
                 break;
             case 1: 
-                if (lumberCount[0]<lumberCount[1]) {  
+                if (lumberCount[0]<lumberCount[1]) {
+                    resourceList.push('lumber')  
                     hexagon.setAttribute("class", 'lumber');
                     hexagon.setAttribute("id", 'used');
                     lumberCount[0]++
@@ -34,6 +38,7 @@ const randomTile=()=>{
                 break;
             case 2: 
                 if (wheatCount[0]<wheatCount[1]) {
+                    resourceList.push('wheat')
                     hexagon.setAttribute("class", 'wheat');
                     hexagon.setAttribute("id", 'used');
                     wheatCount[0]++
@@ -43,6 +48,7 @@ const randomTile=()=>{
                 break;
             case 3: 
             if (sheepCount[0]<sheepCount[1]) {
+                resourceList.push('sheep')
                 hexagon.setAttribute("class", 'sheep');
                 hexagon.setAttribute("id", 'used');
                 sheepCount[0]++
@@ -52,6 +58,7 @@ const randomTile=()=>{
                 break;
             case 4: 
             if (oreCount[0]<oreCount[1]) {
+                resourceList.push('ore')
                 hexagon.setAttribute("class", 'ore');
                 hexagon.setAttribute("id", 'used');
                 oreCount[0]++
@@ -62,10 +69,10 @@ const randomTile=()=>{
             case 5:
                 console.log(5)
                 if (desertCount[0]<desertCount[1]) {
+                    resourceList.push('desert')
                     hexagon.setAttribute("class", 'desert');
                     hexagon.setAttribute("id", 'used');
                     desertCount[0]++
-                    console.log('imgadded')
                 } else {
                     console.log('randomTile started')
                     randomTile();
@@ -73,5 +80,6 @@ const randomTile=()=>{
                 }
             default:
                 console.log(`Error:${randomNum}`);
+            console.log(resourceList)
     };
 } 

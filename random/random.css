@@ -177,10 +177,6 @@ h2 {
     clear: left;
 }
 
-/*#o {
-    grid-area:1;
-}*/
-
 .hex-row.first, .hex-row.fifth {
     margin-left: 106px;
 }
