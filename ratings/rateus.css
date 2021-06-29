@@ -177,12 +177,12 @@ textarea:focus {
     cursor:pointer;
     transition:transform 200ms ease-in;
     text-align: center;
+    z-index: 10;
 }
 
 #check:hover {
     transform:scale(1.1);
 }
-
 /*Media Queries*/
 @media only screen and (max-width:50px) {
     nav * {

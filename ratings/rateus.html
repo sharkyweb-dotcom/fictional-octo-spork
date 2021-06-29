@@ -8,8 +8,7 @@
     </head>
 
     <body>
-        <script src='./ratings.js'></script>
-        <nav>
+        <nav id='nav'>
             <ul>
                 <li><a href="../index.html">Overview</a></li>
                 <li><a href="../hexagons/hexagons.html">Map-Maker</a></li>
@@ -43,8 +42,9 @@
                 <br>
                 <textarea name="Suggestions" id="inputsuggest" cols="30" rows="5"></textarea>
             </div>
+            <textarea style='width:0;position:relative;left:10px;height:0;resize:none;border:none;outline:none;' name="tracked" id="inputTracked" cols="30" rows="5"></textarea>
             <br>
             <button onclick='filter()' id='check'>Submit</button>
-        </form>
+        <script src='./ratings.js'></script>
     </body>
 </html>
