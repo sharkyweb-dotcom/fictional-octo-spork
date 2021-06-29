@@ -39,11 +39,12 @@ function colorMode() {
     colorItemList=["head", "mainsub", "sub1", 'p1', 'sub2', 'p2', 'li1', 'li2', 'li3', 'ender', 'sub3', 'p3'];
     colorList=['red','orange','yellow','green','blue !important','indigo','indigo','indigo','indigo','indigo','violet','darkpink'];
     for (let i=0; i<colorList.length; i++) {
+        document.getElementById(colorItemList[i]).style.color=colorList[i];
         if (i===2) {
-            document.getElementById(colorItemList[i]).style.color=colorList[i];
             document.getElementById(colorItemList[i]).style.textShadow='0 0 3px blue';
+        } else if (i===0) {
+            document.getElementById(colorItemList[i]).style.animationName='emphasize'
         } else {
-            document.getElementById(colorItemList[i]).style.color=colorList[i];
             document.getElementById(colorItemList[i]).style.textShadow='none';
         }
         document.getElementById(colorItemList[i]).classList.remove('neon-text');

@@ -38,6 +38,17 @@
     padding-bottom: 0;
     margin-bottom: 0;
     color: red;
+    animation-duration: 700ms;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+    animation-iteration-count: 15;
+}
+
+@keyframes emphasize {
+    0% {text-shadow: 0 0 2px blue,0.5px 0.5px 3px red;}
+    33.333% {text-shadow:0 0 2px blue,0.5px 0.5px 3px red, 1.5px 2px 3px orange;}
+    66.666% {text-shadow:0 0 2px blue,0.5px 0.5px 3px red, 1.5px 2px 3px orange,3px 4px 3px green;}
+    100% {text-shadow:0 0 2px blue,0.5px 0.5px 3px red, 1.5px 2px 3px orange,3px 4px 3px green, 4px 5.5px 3px purple;}
 }
 
 .light-text {
