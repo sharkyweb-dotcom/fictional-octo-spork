@@ -16,6 +16,62 @@
     transition:background-color 1s, 
 }
 
+/*Logo*/
+@keyframes spin {
+    0% {transform:rotate(0);filter: hue-rotate(0);}
+    33.3% {transform:rotate(630deg);}
+    66.6% {transform:rotate(630deg);}
+    100% {transform:rotate(720deg);filter: hue-rotate(360deg);}
+}
+#logo {
+    position: absolute;
+    top: 110px;
+    right:110px;
+    animation:spin 5s linear infinite alternate;
+    animation-fill-mode:forwards;
+    position:absolute;
+    top:5.5px;
+    right: 500px;
+}
+
+@keyframes separation-right {
+    0% {transform:translateY(0px);}
+    50%{transform:translateY(-50px);}
+    100%{transform:translateY(0px);}
+}
+
+@keyframes separation-left {
+    0% {transform:translateY(0px);}
+    50%{transform:translateY(50px);}
+    100%{transform:translateY(0px);}
+}
+
+#logo .top {
+    animation:separation-right 1.6666s ease-in-out 1.6666s infinite;
+}
+  
+#logo .bottom {
+    animation:separation-left 1.6666s ease-in-out 1.6666s infinite;
+}
+
+.hex .top {
+    width: 0;
+    border-bottom: 15px solid #6C6;
+    border-left: 26px solid transparent;
+    border-right: 26px solid transparent;
+}
+.hex .middle {
+    width: 52px;
+    height: 30px;
+    background: #6C6;
+}
+.hex .bottom {
+    width: 0;
+    border-top: 15px solid #6C6;
+    border-left: 26px solid transparent;
+    border-right: 26px solid transparent;
+}
+
 .before:not(.changer) {
     background: white !important;
 }
