@@ -32,6 +32,7 @@ function nightMode() {
         itemOfNight.classList.remove('light-text');
         itemOfNight.classList.remove('neon-text');
     })
+    document.getElementById('logo').classList.add('nightLogo')
 }
 // Color
 function colorMode() {

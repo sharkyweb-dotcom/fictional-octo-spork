@@ -156,6 +156,20 @@ body {
     background-image: var(--night-background);
 }
 
+.nightLogo .middle {
+    background-color:white !important;
+}
+
+.nightLogo .top {
+    border-bottom-color: white !important;
+    filter: hue-rotate(0) !important;
+}
+
+.nightLogo .bottom {
+    border-top-color: white !important;
+    filter: hue-rotate(0) !important;
+}
+
 .neon-main {
     background-image: var(--neon-background);
 }
