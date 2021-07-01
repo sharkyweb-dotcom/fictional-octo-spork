@@ -9,6 +9,7 @@ function lightMode() {
         itemOfLight.classList.remove('night-text');
         itemOfLight.style.textShadow=('none');
     })
+    document.getElementById('logo').setAttribute('class','lightLogo')
 }
 // Neon
 function neonMode() {
@@ -21,6 +22,7 @@ function neonMode() {
         itemColor=document.getElementById(neonItem).style.color;
         document.getElementById(neonItem).style.textShadow=`0 0 17px ${itemColor}`;
     })
+    document.getElementById('logo').setAttribute('class','neonLogo')
 }
 // Night
 function nightMode() {
@@ -32,7 +34,7 @@ function nightMode() {
         itemOfNight.classList.remove('light-text');
         itemOfNight.classList.remove('neon-text');
     })
-    document.getElementById('logo').classList.add('nightLogo')
+    document.getElementById('logo').setAttribute('class','nightLogo')
 }
 // Color
 function colorMode() {
@@ -52,6 +54,7 @@ function colorMode() {
         document.getElementById(colorItemList[i]).classList.remove('light-text');
         document.getElementById(colorItemList[i]).classList.remove('night-text');
     }
+    document.getElementById('logo').setAttribute('class','colorLogo')
 }
 // Default
 function defaultMode() {
@@ -62,4 +65,5 @@ function defaultMode() {
         document.getElementById(item).classList.remove('light-text');
         document.getElementById(item).classList.remove('night-text');
     })
+    document.getElementById('logo').setAttribute('class','defaultLogo')
 }

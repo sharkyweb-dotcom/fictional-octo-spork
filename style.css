@@ -54,18 +54,18 @@
     animation:separation-left 1.6666s ease-in-out 1.6666s infinite;
 }
 
-.hex .top {
+#logo .top {
     width: 0;
     border-bottom: 15px solid #6C6;
     border-left: 26px solid transparent;
     border-right: 26px solid transparent;
 }
-.hex .middle {
+#logo .middle {
     width: 52px;
     height: 30px;
     background: #6C6;
 }
-.hex .bottom {
+#logo .bottom {
     width: 0;
     border-top: 15px solid #6C6;
     border-left: 26px solid transparent;
@@ -168,6 +168,43 @@ body {
 .nightLogo .bottom {
     border-top-color: white !important;
     filter: hue-rotate(0) !important;
+}
+.defaultLogo .middle {
+    background-color:black !important;
+}
+
+.defaultLogo .top {
+    border-bottom-color: black !important;
+    filter: hue-rotate(0) !important;
+}
+
+.defaultLogo .bottom {
+    border-top-color: black !important;
+    filter: hue-rotate(0) !important;
+}
+
+.lightLogo .middle {
+    filter:brightness(75%);
+}
+
+.lightLogo .top {
+    filter: hue-rotate(0) !important;
+}
+
+.lightLogo .bottom {
+    filter: hue-rotate(0) !important;
+}
+
+.neonLogo .middle {
+    filter:drop-shadow(5px 5px 5px #6c6);
+}
+
+.neonLogo .top {
+    filter:drop-shadow(5px 5px 5px #6c6);
+}
+
+.neonLogo .bottom {
+    filter:drop-shadow(5px 5px 5px #6c6);
 }
 
 .neon-main {
