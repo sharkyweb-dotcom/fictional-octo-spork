@@ -56,7 +56,7 @@ button.randomize {
     max-width: 180px;
     max-height: 180px;
     overflow: hidden;
-    shape-outside: polygon(50% 0, 100% 33%, 100% 66%, 50% 100%, 0% 66%, 0% 33%);
+    shape-outside: polygon(50% 37%, 90% 54%, 90% 95%, 50% 115%, 13% 95%, 13% 54%);
 }
 
 .imgBoard .hex-row .hex {
@@ -80,6 +80,8 @@ nav {
     position: absolute;
     top: 1px;
     z-index:5;
+    display: flex;
+    justify-content: space-around;
 }
 
 nav:hover {
@@ -96,7 +98,7 @@ nav * {
 nav li {
     list-style: none;
     display: inline-block;
-    padding: 0 5%;
+    margin: 0 10px;
 }
 
 nav li a {

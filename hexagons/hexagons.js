@@ -1,6 +1,6 @@
 // Enter fair map lists head
 const mapOne=['brick','sheep','lumber','brick','ore','lumber','brick','brick','sheep','brick','brick','brick','brick','brick','brick','brick','brick','brick','brick'];
-const mapTwo=['sheep'];
+const mapTwo=["brick", "desert", "lumber", "wheat", "lumber", "sheep", "ore", "lumber", "ore", "ore", "brick", "wheat", "brick", "wheat", "wheat", "sheep"];
 const mapThree=['ore'];
 const mapFour=['lumber'];
 const mapFive=['wheat'];
@@ -32,7 +32,7 @@ function randMap() {
 
 function addImg(map) {
     randMap();
-    map=selectedMap;
+    map=mapTwo;
     map.forEach(tile=>{
         const hexagon=document.getElementById("imgHex");
         hexagon.setAttribute("class", tile);
