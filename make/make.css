@@ -1,0 +1,208 @@
+/*Variables*/
+:root {
+    --brick:url('../images/brick.jpg');
+    --lumber:url('../images/lumber.jpg');
+    --ore:url('../images/ore.jpg');
+    --sheep:url('../images/sheep.jpg');
+    --wheat:url('../images/wheat.jpg');
+    --desert:url('../images/desert.jpg');
+}
+
+/*Universal Styles*/
+* {
+    margin:0;
+    box-sizing: border-box;
+}
+/*Randomizing*/
+button.randomize {
+    width: 100px;
+    height: 100px;
+    z-index:6;
+    border-radius: 100px;
+}
+
+.brick {
+    background: var(--brick) !important;
+}
+
+.sheep {
+    background: var(--sheep) !important;
+}
+
+.wheat {
+    background: var(--wheat) !important;
+}
+
+.lumber {
+    background: var(--lumber) !important;
+}
+
+.ore {
+    background: var(--ore) !important;
+}
+
+.desert {
+    background: var(--desert) !important;
+}
+.brick,.sheep,.wheat,.ore,.lumber,.desert {
+    background-clip: text !important;
+    -webkit-background-clip:text !important;
+    background-repeat: repeat !important;
+}
+#imgHex,#added {
+    z-index:3;
+    opacity:1;
+    font-size:160px;
+    color: transparent;
+    max-width: 180px;
+    max-height: 180px;
+    overflow: hidden;
+    shape-outside: polygon(50% 37%, 90% 54%, 90% 95%, 50% 115%, 13% 95%, 13% 54%);
+}
+
+.imgBoard .hex-row .hex:not(.brick,.sheep,.wheat,.ore,.lumber,.desert) {
+    background: url('../images/question.png');
+}
+
+#refreshMessage {
+    color:blue;
+    font-size:50px;
+    font-family: Creepster;
+}
+
+/*Navigation Section*/
+nav {
+    background-color: yellow;
+    height: 40px;
+    position:fixed;
+    width:100vw;
+    position: absolute;
+    top: 1px;
+    z-index:5;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav:hover {
+    border:2px solid red;
+}
+
+nav * {
+    font-size: 25px;
+    font-family: 'New Tegomin';
+    text-align: center;
+    z-index: inherit;
+}
+
+nav li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav li a {
+    text-decoration: none;
+}
+
+nav li a:hover {
+    text-decoration: underline;
+}
+
+nav li a:visited {
+    color: rgb(234, 0, 255);
+}
+
+ul, li {
+    padding-top: 0;
+    margin-top:0;
+}
+
+/*Opening Section*/
+body {
+    background-image: linear-gradient(to bottom right, rgb(196, 255, 255), rgb(204, 255, 255));
+}
+
+h1 {
+    font-size: 30px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    color: red;
+}
+
+h2 {
+    font-size: 25px;
+    padding-top: 0;
+    margin-top: 10px;
+    color: orange;
+}
+
+#opening {
+    text-align: center;
+    font-family: 'Reggae One';
+    width:100vw;
+    position:relative;
+    top:40px;
+    margin-bottom:55px;
+}
+
+/*The Board*/
+#roadBoard {
+    margin: 0 auto 110px auto;
+    position: absolute;
+    top:115px;
+    opacity: 0;
+}
+
+.hex, .sheep, .wheat, .brick, .desert, .ore,.lumber {
+    float: left;
+    margin-left: 3px !important;
+    margin-bottom: -26px !important;
+}
+/*104px by 180px*/
+.hex .top {
+    width: 0;
+    border-bottom: 30px solid #6C6;
+    border-left: 52px solid transparent;
+    border-right: 52px solid transparent;
+}
+.hex .middle {
+    width: 104px;
+    height: 60px;
+    background: #6C6;
+}
+.hex .bottom {
+    width: 0;
+    border-top: 30px solid #6C6;
+    border-left: 52px solid transparent;
+    border-right: 52px solid transparent;
+}
+.hex-row {
+    clear: left;
+}
+
+.hex-row.first, .hex-row.fifth {
+    margin-left: 106px;
+}
+
+.hex-row.second, .hex-row.fourth {
+    margin-left: 53px;
+}
+
+form {
+    position: fixed;
+    bottom: 15px;
+    right:15px;
+    background-color: white;
+    border: 1px solid gold;
+    width: 100px;
+    height: 150px;
+}
+
+form * {
+    padding: 10px 10px;
+    text-align: start !important;
+    justify-content: start;
+    color: goldenrod;
+    font-family:Pattaya;
+    font-size: large;
+}
