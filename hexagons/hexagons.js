@@ -1,4 +1,5 @@
-// Enter fair map lists head
+location.replace('./unfinished.html')
+// Enter fair map lists here
 const mapOne=['brick','sheep','lumber','brick','ore','lumber','brick','brick','sheep','brick','brick','brick','brick','brick','brick','brick','brick','brick','brick'];
 const mapTwo=["brick", "desert", "lumber", "wheat", "lumber", "sheep", "ore", "lumber", "ore", "ore", "brick", "wheat", "brick", "wheat", "wheat", "sheep"];
 const mapThree=['ore'];
@@ -39,3 +40,5 @@ function addImg(map) {
         hexagon.setAttribute("id", 'used');
     })
 }
+
+location.replace('./unfinished.html')
