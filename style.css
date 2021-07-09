@@ -13,7 +13,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    transition:background-color 1s, 
+    transition:background-color 1s;
+    cursor:none;
 }
 
 /*Logo*/
@@ -24,25 +25,22 @@
     100% {transform:rotate(720deg);filter: hue-rotate(360deg);}
 }
 #logo {
-    position: absolute;
-    top: 110px;
-    right:110px;
     animation:spin 5s linear infinite alternate;
     animation-fill-mode:forwards;
     position:absolute;
-    top:5.5px;
-    right: 500px;
+    z-index:100;
+    pointer-events: none;
 }
 
 @keyframes separation-right {
     0% {transform:translateY(0px);}
-    50%{transform:translateY(-50px);}
+    50%{transform:translateY(-25px);}
     100%{transform:translateY(0px);}
 }
 
 @keyframes separation-left {
     0% {transform:translateY(0px);}
-    50%{transform:translateY(50px);}
+    50%{transform:translateY(25px);}
     100%{transform:translateY(0px);}
 }
 
@@ -56,20 +54,20 @@
 
 #logo .top {
     width: 0;
-    border-bottom: 15px solid #6C6;
-    border-left: 26px solid transparent;
-    border-right: 26px solid transparent;
+    border-bottom: calc(7.5px*1.5) solid #6C6;
+    border-left: calc(13px*1.5) solid transparent;
+    border-right: calc(13px*1.5) solid transparent;
 }
 #logo .middle {
-    width: 52px;
-    height: 30px;
+    width: calc(26px*1.5);
+    height: calc(15px*1.5);
     background: #6C6;
 }
 #logo .bottom {
     width: 0;
-    border-top: 15px solid #6C6;
-    border-left: 26px solid transparent;
-    border-right: 26px solid transparent;
+    border-top: calc(7.5px*1.5) solid #6C6;
+    border-left: calc(13px*1.5) solid transparent;
+    border-right: calc(13px*1.5) solid transparent;
 }
 
 .before:not(.changer) {
@@ -85,8 +83,17 @@
     flex-grow: 1;
 }
 
-#fairness {
-    height:1000px;
+#login {
+    margin-bottom:1000px;
+    color:rgb(43, 255, 0);
+    font-size: large;
+    display: block;
+}
+
+#login:hover {
+    text-decoration: underline;
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 #head {
@@ -196,15 +203,18 @@ body {
 }
 
 .neonLogo .middle {
-    filter:drop-shadow(5px 5px 5px #6c6);
+    background-color: gold;
+    filter:drop-shadow(0 0 5px #6c6),
 }
 
 .neonLogo .top {
-    filter:drop-shadow(5px 5px 5px #6c6);
+    border-top-color:gold;
+    filter:drop-shadow(0 0 5px #6c6);
 }
 
 .neonLogo .bottom {
-    filter:drop-shadow(5px 5px 5px #6c6);
+    border-bottom-color:gold;
+    filter:drop-shadow(0 0 5px #6c6);
 }
 
 .neon-main {
