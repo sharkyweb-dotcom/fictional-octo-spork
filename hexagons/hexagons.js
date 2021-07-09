@@ -41,4 +41,3 @@ function addImg(map) {
     })
 }
 
-location.replace('./unfinished.html')

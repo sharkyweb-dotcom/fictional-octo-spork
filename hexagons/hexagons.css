@@ -61,8 +61,9 @@ button.randomize {
 
 .imgBoard .hex-row .hex {
     background: url('../images/question.png') !important;
-    background-clip: text;
-    -webkit-background-clip:text;
+    background-clip: text !important;
+    -webkit-background-clip:text !important;
+    float: left;
 }
 
 #refreshMessage {
@@ -150,13 +151,17 @@ h2 {
 #roadBoard {
     position: absolute;
     top:115px;
-    opacity: 0;
 }
 
-.hex, .sheep, .wheat, .brick, .desert, .ore,.lumber {
+.hex{
     float: left;
-    margin-left: 3px !important;
+    margin-left: -10px !important;
     margin-bottom: -26px !important;
+}
+.sheep, .wheat, .brick, .desert, .ore,.lumber  {
+    float: left;
+    margin-left: -20px !important;
+    margin-bottom: -50px !important;
 }
 /*104px by 180px*/
 .hex .top {
