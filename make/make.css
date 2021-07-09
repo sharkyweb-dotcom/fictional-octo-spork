@@ -187,15 +187,21 @@ h2 {
 .hex-row.second, .hex-row.fourth {
     margin-left: 53px;
 }
-
+/*Form*/
 form {
     position: fixed;
     bottom: 15px;
-    right:15px;
-    background-color: white;
-    border: 1px solid gold;
     width: 100px;
     height: 150px;
+    background-color: white;
+    border: 1px solid gold;
+}
+
+#resourceForm {
+    right:15px;
+}
+#settleForm {
+    right:125px;
 }
 
 form * {
@@ -205,4 +211,46 @@ form * {
     color: goldenrod;
     font-family:Pattaya;
     font-size: large;
+}
+
+label[for='blue'] {
+    color: blue;
+}
+label[for='orange'] {
+    color: orange;
+}
+label[for='red'] {
+    color:red;
+}
+label[for='black'] {
+    color: black;
+}
+
+/*Settlements*/
+.settlement {
+    width: 75px;
+    height: 60px;
+    display: inline-block;
+    clip-path: polygon(50% 0%, 82% 38%, 82% 100%, 18% 100%, 18% 38%);
+    position:absolute;
+}
+.blue {
+    background-color: blue;
+    top:60px;
+    right:20px;
+}
+.orange {
+    background-color: orange;
+    top:130px;
+    right:20px;
+}
+.red {
+    background-color: red;
+    top:200px;
+    right:20px;
+}
+.black {
+    background-color: black;
+    top:270px;
+    right:20px;
 }

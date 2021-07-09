@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Pattaya&family=Geostar&family=Shadows+Into+Light&family=Girassol&family=New+Tegomin&family=Reggae+One&family=Codystar&family=Itim&display=swap" rel="stylesheet">
     </head>
 </head>
-<body>
+<body id='body'>
     <nav>
         <ul>
             <li><a href="../index.html">Overview</a></li>
@@ -64,7 +64,21 @@
             <h1 id="imgHex" class="hex">&#x2B22</h1>
         </div>
     </div>
-    <form>
+    <form id='settleForm'>
+        <label for="blue">Blue</label>
+        <input id='blue' name='settlements' type="checkbox">
+    <br>
+        <label for="orange">Orange</label>
+        <input id='orange' name='settlements'  type="checkbox">
+    <br>
+        <label for="red">Red</label>
+        <input id='red' name='settlements'  type="checkbox">
+    <br>
+        <label for="black">Black</label>
+       <input id='black' name='settlements'  type="checkbox">
+    </form>
+
+    <form id='resourceForm'>
         <label for="brick">Brick</label>
         <input id='brick' name='select' type="radio">
     <br>
@@ -84,7 +98,7 @@
         <input id='desert' name='select'  type="radio">
     </form>
     <br>
-    <!--<textarea name="tile-1" id="text" cols="30" rows="10"></textarea>-->
+    </center>
     <script src='./make.js'></script>
 </body>
         
