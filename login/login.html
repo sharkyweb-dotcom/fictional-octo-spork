@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login to Catan</title>
+    <link href="./login.css" type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Geostar&family=Shadows+Into+Light&family=Girassol&family=New+Tegomin&family=Reggae+One&family=Codystar&family=Itim&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li id='nav1'><a href="../index.html">Overview</a></li>
+            <li id='nav2'><a href="../hexagons/hexagons.html">Fair Map</a></li>
+            <li id='nav3'><a href="../random/random.html">Random Board</a></li>
+            <li id='nav4'><a href="../make/make.html">Make-A-Map</a></li>
+            <li id='nav5'><a href="../ratings/rateus.html">Rate Us</a></li>
+        </ul>
+    </nav>
+    <h1>Login</h1>
+    <h3>Enter your Username And Password</h3>
+    <form id='loginForm'>
+        <label for="username">Username:</label>
+        <input id="username" type="text" required>
+        <br>
+        <br>
+        <label for="password">Password:</label>
+        <input id='password' type="password" required>
+    </form>
+    <button onclick='Account.login()'>Login</button>
+    <script src='./resetLogin.js'></script>
+    <script src='./login.js'></script>
+    <a href="./register.html">Register Here</a>
+</body>
+</html>
