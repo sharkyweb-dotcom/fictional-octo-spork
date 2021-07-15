@@ -1,4 +1,7 @@
 console.log(document.getElementById('logo'))
+if (selectedAccount) {
+    console.log(selectedAccount)
+}
 // Light
 function lightMode() {
     document.getElementById("main").setAttribute("class", 'light-main')

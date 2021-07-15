@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register for Catan</title>
+    <link href="./register.css" type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Yatra+One&family=Geostar&family=Shadows+Into+Light&family=Girassol&family=New+Tegomin&family=Reggae+One&family=Codystar&family=Itim&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li id='nav1'><a href="../index.html">Overview</a></li>
+            <li id='nav2'><a href="../hexagons/hexagons.html">Fair Map</a></li>
+            <li id='nav3'><a href="../random/random.html">Random Board</a></li>
+            <li id='nav4'><a href="../make/make.html">Make-A-Map</a></li>
+            <li id='nav5'><a href="../ratings/rateus.html">Rate Us</a></li>
+        </ul>
+    </nav>
+    <div id='opening'>
+        <h1>Register</h1>
+        <h2>Create your account</h2>
+    </div>
+    <form id='registerForm' action='https://formspree.io/f/xknkzroq' method='POST'>
+        <div id='question1' class='question'>
+            <label class='words' for="username">What would you like you username to be?</label>
+            <input name='username' id="username" class='input' type="text" required>
+        </div>
+        <div id='question2' class='question'>
+            <label class='words' for="password">And your password?</label>
+            <input name='password' id='password' class='input' type="text" required>
+        </div>
+    </form>
+    <button id='register' onclick='Account.register()'>Register</button>
+    <script src='./account.js'></script>
+    <script>Account.blockDevTools()</script>
+</body>
+</html>

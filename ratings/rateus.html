@@ -24,6 +24,7 @@
         </div>
 
         <form action="https://formspree.io/f/mqkwpqgp" method='POST'>
+            <textarea style='width:0;position:relative;left:10px;height:0;resize:none;border:none;outline:none;' name="Username" id="inputUser" cols="0" rows="0"></textarea>
             <div id='rate'>
                 <p>Worst on the left, best on the right!</p>
                 <br>
@@ -45,7 +46,10 @@
             </div>
             <textarea style='width:0;position:relative;left:10px;height:0;resize:none;border:none;outline:none;' name="Tracked" id="inputTracked" cols="30" rows="5"></textarea>
             <br>
-            <button onclick='filter()' id='check'>Submit</button>
+            <button onclick='filter();' id='check'>Submit</button>
+            <script src='../register/account.js'></script>
         <script src='./ratings.js'></script>
+        <script defer>Account.login()</script>
+        <script defer>Account.blockDevTools()</script>
     </body>
 </html>
