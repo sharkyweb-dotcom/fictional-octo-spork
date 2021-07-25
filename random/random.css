@@ -17,8 +17,10 @@
 button.randomize {
     width: 100px;
     height: 100px;
-    z-index:6;
+    z-index:15;
     border-radius: 100px;
+    position:absolute;
+    left:100px;
 }
 
 .brick {
@@ -48,15 +50,12 @@ button.randomize {
 #imgHex, #used {
     z-index:3;
     opacity:1;
-    font-size:160px;
-    background-clip: text;
-    -webkit-background-clip:text;
-    background-repeat: repeat;
-    color: transparent;
-    max-width: 180px;
-    max-height: 180px;
+    font-size:20px;
+    width: calc(104px * 0.95);
+    height: calc(120px * 0.95);
     overflow: hidden;
-    shape-outside: polygon(50% 37%, 90% 54%, 90% 95%, 50% 115%, 13% 95%, 13% 54%);
+    shape-outside: polygon(50% 0%, 100% 30%, 100% 70%, 50% 100%, 0% 70%, 0% 30%);
+    clip-path:polygon(50% 0%, 100% 30%, 100% 70%, 50% 100%, 0% 70%, 0% 30%);
 }
 
 .imgBoard .hex-row .hex {
@@ -149,20 +148,30 @@ h2 {
     margin: 0 auto 110px auto;
     position: absolute;
     top:115px;
-    opacity: 0;
+}
+.imgBoard {
+    margin: 0 10px 110px auto;
+    position: absolute;
+    top:115px;
+    z-index:10;
+}
+.hex {
+    float: left;
+    margin-left: 3px;
+    margin-bottom: -26px;
 }
 
-.hex, .sheep, .wheat, .brick, .desert, .ore,.lumber {
+.imgBoard * * {
     float: left;
-    margin-left: 3px !important;
-    margin-bottom: -26px !important;
+    margin-left: calc(3px * 2.5) !important;
+    margin-bottom: calc(-26px * 0.75) !important;
 }
-/*104px by 180px*/
+/*104px by 120px*/
 .hex .top {
     width: 0;
     border-bottom: 30px solid #6C6;
     border-left: 52px solid transparent;
-    border-right: 52px solid transparent;
+    border-right: 52px solid transparent;   
 }
 .hex .middle {
     width: 104px;
@@ -185,4 +194,16 @@ h2 {
 
 .hex-row.second, .hex-row.fourth {
     margin-left: 53px;
+}
+.imgBoard .hex-row * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#propacircle,#usedCirc {
+    background-color: burlywood;
+    z-index:100;
+    width: 40px;
+    height:40px;
+    border-radius:20px;
 }
