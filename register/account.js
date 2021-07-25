@@ -1,4 +1,5 @@
 accountList=[]
+let loginRequire=true;
 let loggedIn=false;
 let selectedAccount=false;
 class Account {
@@ -13,6 +14,7 @@ class Account {
         accountList.push(this);
     }
     static login() {
+        if (loginRequire) {
         if (window.confirm('Would you like to login?')===true) {
             let selectedUsername=window.prompt('Username: ');
             console.log(selectedUsername);
@@ -33,6 +35,7 @@ class Account {
         } else {
             alert('Unable to rate without a login.')
             location.replace('../index.html')
+        }
         }
     }
     static register() {

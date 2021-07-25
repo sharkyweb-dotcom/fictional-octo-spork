@@ -76,6 +76,6 @@ const logo=document.getElementById('logo')
 document.onmousemove=(e)=>{
     let x=e.clientX;
     let y=e.clientY;
-    logo.style.top=`${y-75}px`;
-    logo.style.left=`${x-25}px`;
+    logo.style.top=`${y-45}px`;
+    logo.style.left=`${x-17}px`;
 }
