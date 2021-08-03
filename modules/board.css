@@ -1,0 +1,51 @@
+/*The Board*/
+#roadBoard {
+    margin: 0 auto 110px auto;
+}
+.imgBoard {
+    margin: 0 10px 110px auto;
+    position: absolute;
+    top:115px;
+    z-index:10;
+    background-color:blue;
+}
+.imgBoard * * {
+    float: left;
+    margin-left: calc(3px * 2.5) !important;
+    margin-bottom: calc(-26px * 0.75) !important;
+}
+
+.brick {
+    background: var(--brick);
+}
+
+.sheep {
+    background: var(--sheep);
+}
+
+.wheat {
+    background: var(--wheat);
+}
+
+.lumber {
+    background: var(--lumber);
+}
+
+.ore {
+    background: var(--ore);
+}
+
+.desert {
+    background: var(--desert);
+}
+
+#imgHex, #used {
+    z-index:3;
+    opacity:1;
+    font-size:20px;
+    width: calc(104px * 0.95);
+    height: calc(120px * 0.95);
+    overflow: hidden;
+    shape-outside: polygon(50% 0%, 100% 30%, 100% 70%, 50% 100%, 0% 70%, 0% 30%);
+    clip-path:polygon(50% 0%, 100% 30%, 100% 70%, 50% 100%, 0% 70%, 0% 30%);
+}

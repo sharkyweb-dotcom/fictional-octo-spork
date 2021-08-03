@@ -2,6 +2,7 @@ accountList=[]
 let loginRequire=true;
 let loggedIn=false;
 let selectedAccount=false;
+let tryAgain;
 class Account {
     constructor(username,password) {
         this._username=username;
@@ -12,29 +13,54 @@ class Account {
         this._fairUsed=0;
         this._compromised=false;
         accountList.push(this);
-    }
+    } 
     static login() {
+        console.log('BB Here')
         if (loginRequire) {
         if (window.confirm('Would you like to login?')===true) {
             let selectedUsername=window.prompt('Username: ');
             console.log(selectedUsername);
             let selectedPassword=window.prompt('Password: ');
             console.log(selectedPassword);
+            console.log(typeof selectedUsername,typeof selectedPassword)
+            if (selectedUsername===null || selectedPassword===null) {
+                alert('Must enter username and password')
+                if (page==='rate') {
+                    location.replace('../index.html');
+                } else {
+                    tryAgain=confirm('Would you like to try again?')
+                    if (tryAgain) {
+                        Account.login();
+                    }
+                }
+            }
             accountList.forEach(account=>{
+            console.log(account)
             if (account._username===selectedUsername.toLowerCase() & account._password===selectedPassword.toLowerCase()) {
                 alert('You have been logged in.');
                 loggedIn=true;
                 selectedAccount=account._username;
-                document.getElementById('inputUser').value=selectedAccount;
+                if (page==='rate') {
+                    document.getElementById('inputUser').value=selectedAccount;
+                }
             } 
             })
             if (loggedIn===false) {
                 alert('This login information is not valid.');
-                location.replace('../index.html');
+                if (page==='rate') {
+                    location.replace('../index.html');
+                } else {
+                    tryAgain=confirm('Would you like to try again?')
+                    if (tryAgain) {
+                        Account.login();
+                    }
+                }
             } 
         } else {
-            alert('Unable to rate without a login.')
-            location.replace('../index.html')
+            if (page==='rate') {
+                alert('Unable to rate without a login.')
+                location.replace('../index.html')
+            } 
         }
         }
     }
@@ -60,4 +86,10 @@ class Account {
         }
     }
 }
-const duck=new Account('Catanian','Seafarer')
+function random() {
+    if (selectedAccount) {
+        selectedAccount._randomUsed++;
+        console.log('BB '+selectedAccount._randomUsed)
+    }
+}
+const seafarer=new Account('catanian','seafarer')

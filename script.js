@@ -79,3 +79,4 @@ document.onmousemove=(e)=>{
     logo.style.top=`${y-45}px`;
     logo.style.left=`${x-17}px`;
 }
+let page='main';

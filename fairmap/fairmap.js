@@ -1,4 +1,4 @@
-location.replace('./unfinished.html')
+//location.replace('./unfinished.html')
 // Enter fair map lists here
 const mapOne=['brick','sheep','lumber','brick','ore','lumber','brick','brick','sheep','brick','brick','brick','brick','brick','brick','brick','brick','brick','brick'];
 const mapTwo=["brick", "desert", "lumber", "wheat", "lumber", "sheep", "ore", "lumber", "ore", "ore", "brick", "wheat", "brick", "wheat", "wheat", "sheep"];
@@ -40,4 +40,4 @@ function addImg(map) {
         hexagon.setAttribute("id", 'used');
     })
 }
-
+let page='fair'

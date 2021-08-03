@@ -222,8 +222,9 @@ label[for='orange'] {
 label[for='red'] {
     color:red;
 }
-label[for='black'] {
-    color: black;
+label[for='white'] {
+    color: white;
+    text-shadow: 0 0 3px black;
 }
 
 /*Settlements*/
@@ -249,8 +250,8 @@ label[for='black'] {
     top:200px;
     right:20px;
 }
-.black {
-    background-color: black;
+.white {
+    background-color: white;
     top:270px;
     right:20px;
 }

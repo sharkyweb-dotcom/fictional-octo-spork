@@ -49,3 +49,4 @@ listenedList.forEach(item=>{
         document.getElementById('inputTracked').value=inputArray.join('\n');
     });
 })
+let page='rate';

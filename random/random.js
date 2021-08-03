@@ -1,3 +1,4 @@
+let first=true;
 function addImg() {
     brickCount=[0,3];
     wheatCount=[0,4];
@@ -5,13 +6,25 @@ function addImg() {
     sheepCount=[0,4];
     lumberCount=[0,4];
     desertCount=[0,1];
+    if (first===false) {
+        let circle=document.createElement('div');
+        if (odd) {
+            circle.id='propacircle';
+        } else {
+            circle.id='usedCirc';
+        }
+        Object.values(document.getElementsByClassName('desert')).forEach(desertHex=>desertHex.appendChild(circle))
+    }
     shuffleArray(propArray)
-    console.log('AA '+propArray)
     for (let i=0; i<19;i++) {
         randomTile();
+    };
+    for (i=0; i<18;i++) {
         propabilityFinder()
     };
     if (odd) {odd=false} else {odd=true}
+    first=false;
+    console.log(propArray)
 }
 resourceList=[];
 let hexagon;
@@ -37,8 +50,6 @@ for (let lm=2;lm<=12;lm++) {
         propArray.push(lm)
     } else if (lm===7) {
 
-    } else if (lm===3) {
-        propArray.push(lm,lm,lm)
     } else {
         propArray.push(lm,lm)
     }
@@ -49,8 +60,7 @@ function propabilityFinder() {
     let randomNumber=Math.floor(Math.random()*12)+1;
     if (odd) {selectCircle=document.getElementById("propacircle");} else {selectCircle=document.getElementById("usedCirc");}
     selectCircle.innerHTML=propArray[propNum]
-    console.log('AA'+propNum)
-    if (propNum===18) {
+    if (propNum===17) {
         propNum=0;
     } else {
         propNum++
@@ -63,9 +73,7 @@ function propabilityFinder() {
 }
 const randomTile=()=>{
         let randomNum=Math.floor(Math.random()*6);
-        console.log(document.getElementById("imgHex"))
-        if (odd) {hexagon=document.getElementById("imgHex");console.log('hello'+hexagon)} else {hexagon=document.getElementById("used");}
-        console.log('hi '+hexagon)
+        if (odd) {hexagon=document.getElementById("imgHex");} else {hexagon=document.getElementById("used");}
         switch (randomNum) {
             case 0: 
                 if (brickCount[0]<brickCount[1]) {
@@ -118,19 +126,16 @@ const randomTile=()=>{
             }
                 break;
             case 5:
-                console.log(5)
                 if (desertCount[0]<desertCount[1]) {
                     resourceList.push('desert')
                     hexagon.setAttribute("class", 'desert');
                     switchFunction()
+                    hexagon.removeChild(hexagon.firstChild)
                     desertCount[0]++
                 } else {
-                    console.log('randomTile started')
                     randomTile();
-                    console.log('randomTile started')
                 }
-            default:
-                console.log(`Error:${randomNum}`);
-            console.log(resourceList)
+                break;
     };
 } 
+let page='random'
