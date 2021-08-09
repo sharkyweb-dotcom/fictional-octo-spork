@@ -52,7 +52,15 @@ generate_board <- function() {
   
   ports <- tibble(ports = sample(x = available_ports, size = 9, replace = F))
   
-  # roads <- 
+  tmp <- int_road %>% filter(intersection %in% board1$houses$houses)
+  # for(i in 1:dim(tmp)[1]) {
+  for(i in tmp$intersection) {
+    if(is.na(tmp$adj_road_3[tmp$intersection == i])) {
+      # choose between adj_road_1 and adj_road_2
+    } else {
+      # choose between all 3 roads; none is null
+    }
+  }
   
   return(list(
     "tiles" = tiles, 
@@ -64,9 +72,9 @@ generate_board <- function() {
 }
 
 # for roads 
-# take int_road_helper
+# take int_road
 # subset down to where people's houses are 
-# create a similiar dataset for where people's roads are
+# create a similar dataset for where people's roads are
 # for each of the 8 intersections, take nonnull entries in the row of int_road_helper
 # select one, store it, move on 
 
