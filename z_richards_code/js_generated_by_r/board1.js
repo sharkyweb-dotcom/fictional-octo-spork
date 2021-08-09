@@ -1,0 +1,5 @@
+let tiles = ['brick', 'sheep', 'ore', 'lumber', 'lumber', 'lumber', 'lumber', 'wheat', 'wheat', 'brick', 'desert', 'sheep', 'sheep', 'ore', 'ore', 'wheat', 'wheat', 'brick', 'sheep']
+let probs = [5, 8, 4, 11, 3, 2, 10, 5, 9, 6, 8, 9, 3, 6, 4, 10, 12, 11]
+let houses = [20, 23, 11, 33, 22, 19, 24, 41]
+let ports = ['sheep2for1', 'any3for1', 'ore2for1', 'any3for1', 'lumber2for1', 'brick2for1', 'any3for1', 'wheat2for1', 'any3for1']
+let roads = [20, 23, 13, 45, 28, 26, 30, 56]
