@@ -1,4 +1,4 @@
-//location.replace('./unfinished.html')
+location.replace('./unfinished.html')
 // Enter fair map lists here
 const mapOne=['brick','sheep','lumber','brick','ore','lumber','brick','brick','sheep','brick','brick','brick','brick','brick','brick','brick','brick','brick','brick'];
 const mapTwo=["brick", "desert", "lumber", "wheat", "lumber", "sheep", "ore", "lumber", "ore", "ore", "brick", "wheat", "brick", "wheat", "wheat", "sheep"];
@@ -7,7 +7,7 @@ const mapFour=['lumber'];
 const mapFive=['wheat'];
 const mapSix=['desert'];
 let selectedMap;
-function randMap() {
+/*function randMap() {
     const random=Math.floor(Math.random()*6)
     switch (random) {
         case 0:
@@ -29,15 +29,15 @@ function randMap() {
             selectedMap=mapSix;
             break;
     }
-}
+}*/
 
 function addImg(map) {
-    randMap();
-    map=mapTwo;
-    map.forEach(tile=>{
-        const hexagon=document.getElementById("imgHex");
-        hexagon.setAttribute("class", tile);
-        hexagon.setAttribute("id", 'used');
+    let indexOfMap=0;
+    //randMap();
+    map=tiles;
+    Object.values(document.querySelectorAll('.imgBoard .hex-row .hex')).forEach(tile=>{
+        tile.setAttribute("class", map[indexOfMap]);
+        indexOfMap++;
     })
 }
 let page='fair'
