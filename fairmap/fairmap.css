@@ -138,7 +138,11 @@ body {
 .imgBoard * * {
     float: left;
     margin-left: calc(3px*3.1) !important;
-    margin-bottom: calc(-30px * 0.3 - 4px) !important;
+    margin-bottom: calc(-30px * 0.3 - 1px) !important;
+}
+#roadBoard * * * {
+    margin:0 !important;
+    padding: 0 !important;
 }
 /*104px by 120px*/
 .hex .top-left {
@@ -234,4 +238,7 @@ body {
 }
 .hex {
     z-index: 0;
+}
+.houseWrap {
+    filter: drop-shadow(0 0 1px black);
 }
