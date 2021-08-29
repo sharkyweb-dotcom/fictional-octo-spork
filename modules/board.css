@@ -1,18 +1,11 @@
-/*The Board*/
-#roadBoard {
-    margin: 0 auto 110px auto;
-}
-.imgBoard {
-    margin: 0 10px 110px auto;
-    position: absolute;
-    top:115px;
-    z-index:10;
-    background-color:blue;
-}
-.imgBoard * * {
-    float: left;
-    margin-left: calc(3px * 2.5) !important;
-    margin-bottom: calc(-26px * 0.75) !important;
+/*Variables*/
+:root {
+    --brick:url('../images/brick.jpg');
+    --lumber:url('../images/lumber.jpg');
+    --ore:url('../images/ore.jpg');
+    --sheep:url('../images/sheep.jpg');
+    --wheat:url('../images/wheat.jpg');
+    --desert:url('../images/desert.jpg');
 }
 
 .brick {
@@ -39,13 +32,125 @@
     background: var(--desert);
 }
 
-#imgHex, #used {
-    z-index:3;
-    opacity:1;
-    font-size:20px;
-    width: calc(104px * 0.95);
-    height: calc(120px * 0.95);
-    overflow: hidden;
-    shape-outside: polygon(50% 0%, 100% 30%, 100% 70%, 50% 100%, 0% 70%, 0% 30%);
-    clip-path:polygon(50% 0%, 100% 30%, 100% 70%, 50% 100%, 0% 70%, 0% 30%);
+.imgBoard .hex-row .hex {
+    background: url('../images/question.png') !important;
+}
+/*The Board*/
+#roadBoard {
+    margin: 0 auto 110px auto;
+    position: absolute;
+    top:115px;
+    left:100px;
+}
+.imgBoard {
+    margin: 0 10px 110px auto;
+    position: absolute;
+    top:120px;
+    left:95px;
+    z-index:1;
+}
+.hex {
+    float: left;
+    margin-left: 0;
+    margin-bottom: -30px;
+    position: relative;
+    z-index: 0;
+}
+
+.imgBoard * * {
+    float: left;
+    margin-left: calc(3px*3.1) !important;
+    margin-bottom: calc(-30px * 0.3 - 4px) !important;
+}
+/*104px by 120px*/
+.hex .top-left {
+    width: 0;
+    border-bottom: 30px solid transparent;
+    border-left: 52px solid transparent;
+    border-right: 0 solid transparent;   
+    display:inline-block;
+    margin:0 !important;
+    padding: 0 !important;
+}
+.hex .top-right {
+    width: 0;
+    border-bottom: 30px solid transparent;
+    border-left: 0 solid transparent;
+    border-right: 52px solid transparent;
+    display: inline-block;   
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.hex .middle-left {
+    width: 52px;
+    height: 60px;
+    background: transparent; 
+    display: inline-block;  
+}
+.hex .middle-right {
+    width: 52px;
+    height: 60px;
+    background: transparent;
+    display: inline-block;   
+}
+.placeholder {
+    width:0;
+    height: 0;
+}
+.hex .bottom-left {
+    width: 0;
+    border-top: 30px solid transparent;
+    border-left: 52px solid transparent;
+    border-right: 0 solid transparent;
+    display:inline-block;
+    margin:0 !important;
+    padding: 0 !important;
+}
+.hex .bottom-right {
+    width: 0;
+    border-top: 30px solid transparent;
+    border-left: 0 solid transparent;
+    border-right: 52px solid transparent;
+    display:inline-block;
+    margin:0 !important;
+    padding: 0 !important;
+}
+.hex-row {
+    clear: left;
+}
+
+.hex-row.first, .hex-row.fifth {
+    margin-left: 106px;
+}
+
+.hex-row.second, .hex-row.fourth {
+    margin-left: 53px;
+}
+.imgBoard .hex-row * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#propacircle,#usedCirc {
+    background-color: burlywood;
+    z-index:100;
+    width: 40px;
+    height:40px;
+    border-radius:20px;
+}
+.settlement {
+    position: absolute;
+    width: 50px;
+    height: 60px;
+    display: inline-block;
+    margin: 0 !important;
+    clip-path: polygon(50% 0%, 100% 38%, 100% 100%, 0% 100%, 0% 38%);
+    z-index:100;
+}
+.road {
+    position: relative;
+    z-index:0;
+}
+.hex {
+    z-index: 0;
 }

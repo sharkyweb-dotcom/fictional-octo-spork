@@ -1,46 +1,8 @@
-//location.replace('./unfinished.html')
-Object.values(document.getElementsByClassName('road')).forEach((road)=>{
-    colorize(road.id,'transparent')
-})
-// Enter fair map lists here
-/*const mapOne=['brick','sheep','lumber','brick','ore','lumber','brick','brick','sheep','brick','brick','brick','brick','brick','brick','brick','brick','brick','brick'];
-const mapTwo=["brick", "desert", "lumber", "wheat", "lumber", "sheep", "ore", "lumber", "ore", "ore", "brick", "wheat", "brick", "wheat", "wheat", "sheep"];
-const mapThree=['ore'];
-const mapFour=['lumber'];
-const mapFive=['wheat'];
-const mapSix=['desert'];
-let selectedMap;
-function randMap() {
-    const random=Math.floor(Math.random()*6)
-    switch (random) {
-        case 0:
-            selectedMap=mapOne;
-            break;
-        case 1:
-            selectedMap=mapTwo;
-            break;
-        case 2:
-            selectedMap=mapThree;
-            break;
-        case 3:
-            selectedMap=mapFour;
-            break;
-        case 4:
-            selectedMap=mapFive;
-            break;
-        case 5:
-            selectedMap=mapSix;
-            break;
-    }
-}*/
-
-// Add Settlement Class (ASL-American Sign Language)
 let settlementIncrement=1;
 Object.values(document.getElementsByClassName('settleHex')).forEach(settleHex=>{
     settleHex.classList.add('settleHex'+settlementIncrement)
     settlementIncrement++;
 })
-// Add Road Id (ARI)
 const roadIdArray=[
     //Row 1
     [1, 2, 7, 8,12,13], 
@@ -87,8 +49,12 @@ Object.values(document.getElementsByClassName('road')).forEach((road)=>{
     changeIndex()
     //colorize(road.id,'blue')
 })
-//Finished Road ID
 let incre=1;
+Object.values(document.querySelectorAll('#roadBoard .hex-row .hex')).forEach(thingy=>{
+    thingy.classList.add(`tile${incre}`)
+    incre++;
+})
+
 function colorize(road,color) {
     Object.values(document.getElementsByClassName(`road${road}`)).forEach(existingRoad=>{
         roadElem=existingRoad;
@@ -112,7 +78,6 @@ function directPosition(whichStyle,top,left) {
     whichStyle.top=top;
     whichStyle.left=left;
 }
-
 function position(elem,place) {
     let dirPos=directPosition
     let styling=elem.style;
@@ -138,6 +103,7 @@ function position(elem,place) {
     }
 }
 
+
 function settle(tile,intersection,color) {
     let house=document.createElement('div');
     house.className='settlement';
@@ -145,6 +111,7 @@ function settle(tile,intersection,color) {
     position(house,intersection)
     document.querySelector(`.${tile}`).appendChild(house)
 }
+
 const functionArray=[]
 class SettlementFunction {
     constructor(functionTile,functionIntersection,number) {
@@ -163,6 +130,22 @@ let tilesInRow=3;
 let selectTile=1;
 let selectTileNumber=1;
 
+function whereIs(num) {
+    switch(num) {
+        case 1:
+            return 'top-left'
+        case 2:
+            return 'middle-right'
+        case 3:
+            return 'middle-right'
+        case 4:
+            return 'bottom-left'
+        case 5:
+            return 'middle-left'
+        case 6:
+             return 'middle-left'
+    }
+}
 function findTopIntersections() {
     if (firstTile) {
         firstTile=false;
@@ -217,84 +200,48 @@ for (let k=1;k<28;k++) {
     functionNumber++;
 }
 
-function actuallySettle(num,col) {
-    functionArray[num-1].useSettleFunction(col)
+function randomSettlement(col) {
+    randomSpot=Math.floor(Math.random()*53+1)
+    functionArray[randomSpot-1].useSettleFunction(col)
+    let roadArray=settleRoadDict[randomSpot]
+    let randomIndex=Math.floor(Math.random()*roadArray.length)
+    let randomRoad=roadArray[randomIndex]
+    colorize(`${randomRoad}`,col)
 }
 
-// Interpret Map that's Selected, not being Lackadaisical (IMS Loan)
-let first=true;
-let colorObj={
-    red:[0,2],
-    blue:[0,2],
-    orange:[0,2],
-    white:[0,2]
+
+/*function settlePlace(road,color) {
+    let house=document.createElement('div');
+    house.className='settlement';
+    house.style.backgroundColor=color;
+    //position2(road,house)
+    let roadElem=document.querySelector(`#${road}`)
+    let roadElemType=roadElem.classList[0];
+    switch (roadElemType) {
+        case 'middle-left':
+            break;
+        case 'middle-right':
+            break;
+    }
+    roadElem.appendChild(house)
 }
 
-let probIndex=0;
-let houseIndex=0;
-let roadIndex=0;
-function addImg(map) {
-    let indexOfMap=0;
-    map=tiles;
-    // And Desert-Add Propability Tile (ADAPT)
-    if (!first) {
-        let circle=document.createElement('div');
-        Object.values(document.getElementsByClassName('desert')).forEach(desertHex=>desertHex.appendChild(circle))
-    }
-    // Add Resource Types (ART)
-    Object.values(document.querySelectorAll('.imgBoard .hex-row .hex')).forEach(tile=>{
-        tile.setAttribute("class", map[indexOfMap]);
-        // Remove Desert Propability Circle
-        if (map[indexOfMap]==='desert') {
-            tile.removeChild(tile.firstChild)
-        }
-        indexOfMap++;
-    })
-    // Propability Circle (PC-Personal Computer)
-    Object.values(document.getElementsByClassName('propacircle')).forEach(cop/*Circle Of Probability*/=>{
-        cop.innerHTML=probs[probIndex]
-        probIndex++;
-    })
-    probIndex=0;
-    // Houses Or Settlements, Sacrosanct (HOSS)
-    Object.entries(colorObj).forEach(pair=>{
-        while (pair[1][0]!==pair[1][1]) {
-            actuallySettle(houses[houseIndex],pair[0])
-            pair[1][0]++;
-            houseIndex++;
-        }
-    })
-    colorObj={
-        red:[0,2],
-        blue:[0,2],
-        orange:[0,2],
-        white:[0,2]
-    }
-    //Roads Of Actual Daring (ROAD)
-    Object.entries(colorObj).forEach(pair=>{
-        while (pair[1][0]!==pair[1][1]) {
-            console.log(roads[roadIndex],pair[0])
-            colorize(roads[roadIndex],pair[0])
-            pair[1][0]++;
-            roadIndex++;
-        }
-    })
-    //Delete, Intelligently, but not Austerely,,Previous Exultant Roads and Settlements (DIAPERS)
-    if (!first) {
-        Object.values(document.getElementsByClassName('road')).forEach((road)=>{
-            colorize(road.id,'transparent')
-        })
-        Object.values(document.getElementsByClassName('settlement')).forEach(house=>house.remove())
-    }
-    colorObj={
-        red:[0,2],
-        blue:[0,2],
-        orange:[0,2],
-        white:[0,2]
-    }
-    probIndex=0;
-    houseIndex=0;
-    roadIndex=0;
-    first=false;
+function locationFind() {
+    let randRoadNum=Math.floor(Math.random()*72+1)
+    let randRoad=`road${randRoadNum}`
+    return randRoad;
 }
-let page='fair';
+let lf=locationFind;
+
+function addPerson(playerColor) {
+    let place=lf();
+    colorize(place,playerColor)
+}
+
+addPerson('red')
+*/
+
+//50% 0%, 100% 30%, 100% 70%, 50% 100%, 0% 70%, 0% 30%
+Object.values(document.getElementsByClassName('road')).forEach((road)=>{
+    //colorize(road.id,'blue')
+})

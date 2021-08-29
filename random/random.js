@@ -1,4 +1,10 @@
 let first=true;
+let colorObj={
+    red:[0,2],
+    blue:[0,2],
+    orange:[0,2],
+    white:[0,2]
+}
 function addImg() {
     brickCount=[0,3];
     wheatCount=[0,4];
@@ -23,8 +29,26 @@ function addImg() {
         propabilityFinder()
     };
     if (odd) {odd=false} else {odd=true}
+    if (!first) {
+        Object.values(document.getElementsByClassName('road')).forEach((road)=>{
+            colorize(road.id,'transparent')
+        })
+        Object.values(document.getElementsByClassName('settlement')).forEach(house=>house.remove())
+    }
+    
+    Object.entries(colorObj).forEach(pair=>{
+        while (pair[1][0]!==pair[1][1]) {
+            randomSettlement(pair[0])
+            pair[1][0]++;
+        }
+    })
+    colorObj={
+        red:[0,2],
+        blue:[0,2],
+        orange:[0,2],
+        white:[0,2]
+    }
     first=false;
-    console.log(propArray)
 }
 resourceList=[];
 let hexagon;
@@ -57,7 +81,7 @@ for (let lm=2;lm<=12;lm++) {
 let selectCircle;
 let propNum=0;
 function propabilityFinder() {
-    let randomNumber=Math.floor(Math.random()*12)+1;
+    //let randomNumber=Math.floor(Math.random()*12)+1;
     if (odd) {selectCircle=document.getElementById("propacircle");} else {selectCircle=document.getElementById("usedCirc");}
     selectCircle.innerHTML=propArray[propNum]
     if (propNum===17) {

@@ -5,6 +5,8 @@
     <head>
         <title>Catan Fair Map Builder</title>
         <link href="./random.css" type="text/css" rel="stylesheet">
+        <link href="../modules/nav.css" type="text/css" rel="stylesheet">
+        <link href="../modules/board.css" type="text/css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Pattaya&family=Geostar&family=Shadows+Into+Light&family=Girassol&family=New+Tegomin&family=Reggae+One&family=Codystar&family=Itim&display=swap" rel="stylesheet">
     </head>
@@ -75,6 +77,7 @@
                 <div class='placeholder'></div>
                 <div class='bottom-left bottom road'></div>
                 <div class='bottom-right bottom road'></div>
+                <div class='settlement'></div>
             </div>
     
             <div class="hex">
@@ -266,6 +269,7 @@
                 <div class='bottom-left bottom road'></div>
                 <div class='bottom-right bottom road'></div>
             </div>
+            
             <div class="hex">
                 <div class='top-left top road'></div>
                 <div class='top-right top road'></div>
@@ -277,12 +281,58 @@
                 <div class='bottom-right bottom road'></div>
             </div>
         </div>
+        <h1 id='h1'></h1>
+    </div>
+    <div style='z-index: 100;' id='settlementBoard' class='board'>
+        <div class="first hex-row">
+            <div class="hex settleHex"></div>
+    
+            <div class="hex settleHex"></div>
+    
+            <div class="hex settleHex"></div>
+        </div>
+    
+        <br>
+        <div class="second hex-row">
+            <div class="hex settleHex"></div>
+    
+            <div class="hex settleHex"></div>
+            <div class="hex settleHex"></div>
+    
+            <div class="hex settleHex"></div>
+        </div>
+        <br>
+        <div class="third hex-row">
+            <div class="hex settleHex"></div>
+    
+            <div class="hex settleHex"></div>
+            <div class="hex settleHex"></div>
+    
+            <div class="hex settleHex"></div>
+            <div class="hex settleHex"></div>
+        </div>
+        <div class="fourth hex-row">
+            <div class="hex settleHex"></div>
+    
+            <div class="hex settleHex"></div>
+            <div class="hex settleHex"></div>
+    
+            <div class="hex settleHex"></div>
+        </div>
+        <div class="fifth hex-row">
+            <div class="hex settleHex"></div>
+    
+            <div class="hex settleHex"></div>
+            <div class="hex settleHex"></div>
+        </div>
     </div>
     <button class='randomize' onclick="addImg();random();">Click Here to randomize!</button></center>
     <p id='refreshMessage'></p>
+    <script src="./int_to_adj_road_map.js"></script>
+    <script src="./randomPlayers.js"></script>
     <script src='./random.js'></script>
     <script src='../register/account.js'></script>
-    <script>Account.login()</script>
+    <script>//Account.login()</script>
 </body>
 
 </html>

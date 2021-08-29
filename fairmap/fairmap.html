@@ -2,6 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="./fairmap.css">
+    <link href="../modules/nav.css" type="text/css" rel="stylesheet">
     <title>Catan Map-Maker</title>
 </head>
 
@@ -18,170 +19,312 @@
     <div id='opening'></div>
     
     <center>
-    <div class='imgBoard board'>
+        <div class='imgBoard board' style='opacity: 1;'>
             <div class="first hex-row">
-                <h1 id="imgHex" class="hex">&#x2B22</h1>
+                <div id="imgHex" class="hex"><div class='propacircle'></div></div>
         
-                <h1 id="imgHex" class="hex">&#x2B22</h1>
+                <div id="imgHex" class="hex"><div class='propacircle'></div></div>
         
-                <h1 id="imgHex" class="hex">&#x2B22</h1>
+                <div id="imgHex" class="hex"><div class='propacircle'></div></div>
             </div>
         
             <br>
             <div class="second hex-row">
-                <h1 id="imgHex" class="hex">&#x2B22</h1>
+                <div id="imgHex" class="hex"><div class='propacircle'></div></div>
         
-                <h1 id="imgHex" class="hex">&#x2B22</h1>
-                <h1 id="imgHex" class="hex">&#x2B22</h1>
+                <div id="imgHex" class="hex"><div class='propacircle'></div></div>
+                <div id="imgHex" class="hex"><div class='propacircle'></div></div>
         
-                <h1 id="imgHex" class="hex">&#x2B22</h1>
+                <div id="imgHex" class="hex"><div class='propacircle'></div></div>
             </div>
             <br>
             <div class="third hex-row">
-                <h1 id="imgHex" class="hex">&#x2B22</h1>
+                <div id="imgHex" class="hex"><div class='propacircle'></div></div>
         
-                <h1 id="imgHex" class="hex">&#x2B22</h1>
-                <h1 id="imgHex" class="hex">&#x2B22</h1>
+                <div id="imgHex" class="hex"><div class='propacircle'></div></div>
+                <div id="imgHex" class="hex"><div class='propacircle'></div></div>
         
-                <h1 id="imgHex" class="hex">&#x2B22</h1>
-                <h1 id="imgHex" class="hex">&#x2B22</h1>
+                <div id="imgHex" class="hex"><div class='propacircle'></div></div>
+                <div id="imgHex" class="hex"><div class='propacircle'></div></div>
             </div>
             <div class="fourth hex-row">
-                <h1 id="imgHex" class="hex">&#x2B22</h1>
+                <div id="imgHex" class="hex"><div class='propacircle'></div></div>
         
-                <h1 id="imgHex" class="hex">&#x2B22</h1>
-                <h1 id="imgHex" class="hex">&#x2B22</h1>
+                <div id="imgHex" class="hex"><div class='propacircle'></div></div>
+                <div id="imgHex" class="hex"><div class='propacircle'></div></div>
         
-                <h1 id="imgHex" class="hex">&#x2B22</h1>
+                <div id="imgHex" class="hex"><div class='propacircle'></div></div>
             </div>
             <div class="fifth hex-row">
-                <h1 id="imgHex" class="hex">&#x2B22</h1>
+                <div id="imgHex" class="hex"><div class='propacircle'></div></div>
         
-                <h1 id="imgHex" class="hex">&#x2B22</h1>
-                <h1 id="imgHex" class="hex">&#x2B22</h1>
+                <div id="imgHex" class="hex"><div class='propacircle'></div></div>
+                <div id="imgHex" class="hex"><div class='propacircle'></div></div>
             </div>
     </div>
     <div id='roadBoard' class='board'>
         <div class="first odd hex-row">
             <div class="hex">
-                <div class='top'></div>
-                <div class='middle'></div>
-                <div class='bottom'></div>
+                <div class='top-left top road'></div>
+                <div class='top-right top road'></div>
+                <div class='placeholder'></div>
+                <div class='middle-left middle road'></div>
+                <div class='middle-right middle road'></div>
+                <div class='placeholder'></div>
+                <div class='bottom-left bottom road'></div>
+                <div class='bottom-right bottom road'></div>
+                <div class='settlement'></div>
             </div>
     
             <div class="hex">
-                <div class='top'></div>
-                <div class='middle'></div>
-                <div class='bottom'></div>
+                <div class='top-left top road'></div>
+                <div class='top-right top road'></div>
+                <div class='placeholder'></div>
+                <div class='middle-left middle road'></div>
+                <div class='middle-right middle road'></div>
+                <div class='placeholder'></div>
+                <div class='bottom-left bottom road'></div>
+                <div class='bottom-right bottom road'></div>
             </div>
     
             <div class="hex">
-                <div class='top'></div>
-                <div class='middle'></div>
-                <div class='bottom'></div>
+                <div class='top-left top road'></div>
+                <div class='top-right top road'></div>
+                <div class='placeholder'></div>
+                <div class='middle-left middle road'></div>
+                <div class='middle-right middle road'></div>
+                <div class='placeholder'></div>
+                <div class='bottom-left bottom road'></div>
+                <div class='bottom-right bottom road'></div>
             </div>
         </div>
     
         <br>
         <div class="second hex-row">
             <div class="hex">
-                <div class='top'></div>
-                <div class='middle'></div>
-                <div class='bottom'></div>
+                <div class='top-left top road'></div>
+                <div class='top-right top road'></div>
+                <div class='placeholder'></div>
+                <div class='middle-left middle road'></div>
+                <div class='middle-right middle road'></div>
+                <div class='placeholder'></div>
+                <div class='bottom-left bottom road'></div>
+                <div class='bottom-right bottom road'></div>
             </div>
     
             <div class="hex">
-                <div class='top'></div>
-                <div class='middle'></div>
-                <div class='bottom'></div>
+                <div class='top-left top road'></div>
+                <div class='top-right top road'></div>
+                <div class='placeholder'></div>
+                <div class='middle-left middle road'></div>
+                <div class='middle-right middle road'></div>
+                <div class='placeholder'></div>
+                <div class='bottom-left bottom road'></div>
+                <div class='bottom-right bottom road'></div>
             </div>
             <div class="hex">
-                <div class='top'></div>
-                <div class='middle'></div>
-                <div class='bottom'></div>
+                <div class='top-left top road'></div>
+                <div class='top-right top road'></div>
+                <div class='placeholder'></div>
+                <div class='middle-left middle road'></div>
+                <div class='middle-right middle road'></div>
+                <div class='placeholder'></div>
+                <div class='bottom-left bottom road'></div>
+                <div class='bottom-right bottom road'></div>
             </div>
     
             <div class="hex">
-                <div class='top'></div>
-                <div class='middle'></div>
-                <div class='bottom'></div>
+                <div class='top-left top road'></div>
+                <div class='top-right top road'></div>
+                <div class='placeholder'></div>
+                <div class='middle-left middle road'></div>
+                <div class='middle-right middle road'></div>
+                <div class='placeholder'></div>
+                <div class='bottom-left bottom road'></div>
+                <div class='bottom-right bottom road'></div>
             </div>
         </div>
         <br>
         <div class="third hex-row">
             <div class="hex">
-                <div class='top'></div>
-                <div class='middle'></div>
-                <div class='bottom'></div>
+                <div class='top-left top road'></div>
+                <div class='top-right top road'></div>
+                <div class='placeholder'></div>
+                <div class='middle-left middle road'></div>
+                <div class='middle-right middle road'></div>
+                <div class='placeholder'></div>
+                <div class='bottom-left bottom road'></div>
+                <div class='bottom-right bottom road'></div>
             </div>
     
             <div class="hex">
-                <div class='top'></div>
-                <div class='middle'></div>
-                <div class='bottom'></div>
+                <div class='top-left top road'></div>
+                <div class='top-right top road'></div>
+                <div class='placeholder'></div>
+                <div class='middle-left middle road'></div>
+                <div class='middle-right middle road'></div>
+                <div class='placeholder'></div>
+                <div class='bottom-left bottom road'></div>
+                <div class='bottom-right bottom road'></div>
             </div>
             <div class="hex">
-                <div class='top'></div>
-                <div class='middle'></div>
-                <div class='bottom'></div>
+                <div class='top-left top road'></div>
+                <div class='top-right top road'></div>
+                <div class='placeholder'></div>
+                <div class='middle-left middle road'></div>
+                <div class='middle-right middle road'></div>
+                <div class='placeholder'></div>
+                <div class='bottom-left bottom road'></div>
+                <div class='bottom-right bottom road'></div>
             </div>
     
             <div class="hex">
-                <div class='top'></div>
-                <div class='middle'></div>
-                <div class='bottom'></div>
+                <div class='top-left top road'></div>
+                <div class='top-right top road'></div>
+                <div class='placeholder'></div>
+                <div class='middle-left middle road'></div>
+                <div class='middle-right middle road'></div>
+                <div class='placeholder'></div>
+                <div class='bottom-left bottom road'></div>
+                <div class='bottom-right bottom road'></div>
             </div>
             <div class="hex">
-                <div class='top'></div>
-                <div class='middle'></div>
-                <div class='bottom'></div>
+                <div class='top-left top road'></div>
+                <div class='top-right top road'></div>
+                <div class='placeholder'></div>
+                <div class='middle-left middle road'></div>
+                <div class='middle-right middle road'></div>
+                <div class='placeholder'></div>
+                <div class='bottom-left bottom road'></div>
+                <div class='bottom-right bottom road'></div>
             </div>
         </div>
         <div class="fourth hex-row">
             <div class="hex">
-                <div class='top'></div>
-                <div class='middle'></div>
-                <div class='bottom'></div>
+                <div class='top-left top road'></div>
+                <div class='top-right top road'></div>
+                <div class='placeholder'></div>
+                <div class='middle-left middle road'></div>
+                <div class='middle-right middle road'></div>
+                <div class='placeholder'></div>
+                <div class='bottom-left bottom road'></div>
+                <div class='bottom-right bottom road'></div>
             </div>
     
             <div class="hex">
-                <div class='top'></div>
-                <div class='middle'></div>
-                <div class='bottom'></div>
+                <div class='top-left top road'></div>
+                <div class='top-right top road'></div>
+                <div class='placeholder'></div>
+                <div class='middle-left middle road'></div>
+                <div class='middle-right middle road'></div>
+                <div class='placeholder'></div>
+                <div class='bottom-left bottom road'></div>
+                <div class='bottom-right bottom road'></div>
             </div>
             <div class="hex">
-                <div class='top'></div>
-                <div class='middle'></div>
-                <div class='bottom'></div>
+                <div class='top-left top road'></div>
+                <div class='top-right top road'></div>
+                <div class='placeholder'></div>
+                <div class='middle-left middle road'></div>
+                <div class='middle-right middle road'></div>
+                <div class='placeholder'></div>
+                <div class='bottom-left bottom road'></div>
+                <div class='bottom-right bottom road'></div>
             </div>
     
             <div class="hex">
-                <div class='top'></div>
-                <div class='middle'></div>
-                <div class='bottom'></div>
+                <div class='top-left top road'></div>
+                <div class='top-right top road'></div>
+                <div class='placeholder'></div>
+                <div class='middle-left middle road'></div>
+                <div class='middle-right middle road'></div>
+                <div class='placeholder'></div>
+                <div class='bottom-left bottom road'></div>
+                <div class='bottom-right bottom road'></div>
             </div>
         </div>
         <div class="fifth hex-row">
             <div class="hex">
-                <div class='top'></div>
-                <div class='middle'></div>
-                <div class='bottom'></div>
+                <div class='top-left top road'></div>
+                <div class='top-right top road'></div>
+                <div class='placeholder'></div>
+                <div class='middle-left middle road'></div>
+                <div class='middle-right middle road'></div>
+                <div class='placeholder'></div>
+                <div class='bottom-left bottom road'></div>
+                <div class='bottom-right bottom road'></div>
             </div>
     
             <div class="hex">
-                <div class='top'></div>
-                <div class='middle'></div>
-                <div class='bottom'></div>
+                <div class='top-left top road'></div>
+                <div class='top-right top road'></div>
+                <div class='placeholder'></div>
+                <div class='middle-left middle road'></div>
+                <div class='middle-right middle road'></div>
+                <div class='placeholder'></div>
+                <div class='bottom-left bottom road'></div>
+                <div class='bottom-right bottom road'></div>
             </div>
+            
             <div class="hex">
-                <div class='top'></div>
-                <div class='middle'></div>
-                <div class='bottom'></div>
+                <div class='top-left top road'></div>
+                <div class='top-right top road'></div>
+                <div class='placeholder'></div>
+                <div class='middle-left middle road'></div>
+                <div class='middle-right middle road'></div>
+                <div class='placeholder'></div>
+                <div class='bottom-left bottom road'></div>
+                <div class='bottom-right bottom road'></div>
             </div>
+        </div>
+        <h1 id='h1'></h1>
+    </div>
+    <div style='z-index: 100;' id='settlementBoard' class='board'>
+        <div class="first hex-row">
+            <div class="hex settleHex"></div>
+    
+            <div class="hex settleHex"></div>
+    
+            <div class="hex settleHex"></div>
+        </div>
+    
+        <br>
+        <div class="second hex-row">
+            <div class="hex settleHex"></div>
+    
+            <div class="hex settleHex"></div>
+            <div class="hex settleHex"></div>
+    
+            <div class="hex settleHex"></div>
+        </div>
+        <br>
+        <div class="third hex-row">
+            <div class="hex settleHex"></div>
+    
+            <div class="hex settleHex"></div>
+            <div class="hex settleHex"></div>
+    
+            <div class="hex settleHex"></div>
+            <div class="hex settleHex"></div>
+        </div>
+        <div class="fourth hex-row">
+            <div class="hex settleHex"></div>
+    
+            <div class="hex settleHex"></div>
+            <div class="hex settleHex"></div>
+    
+            <div class="hex settleHex"></div>
+        </div>
+        <div class="fifth hex-row">
+            <div class="hex settleHex"></div>
+    
+            <div class="hex settleHex"></div>
+            <div class="hex settleHex"></div>
         </div>
     </div>
     <button class='randomize' onclick="addImg()">Click Here to get a fair map!</button></center>
     <p id='refreshMessage'></p>
+    <script src="../z_richards_code/js_generated_by_r/board1.js"></script>
     <script src='./fairmap.js'></script>
 </body>
 </html>

@@ -1,0 +1,45 @@
+nav {
+    background-color: yellow;
+    height: 40px;
+    position:fixed;
+    width:100vw;
+    position: absolute;
+    top: 1px;
+    z-index:5;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav:hover {
+    border:2px solid red;
+}
+
+nav * {
+    font-size: 25px;
+    font-family: 'New Tegomin' !important;
+    text-align: center;
+    z-index: inherit;
+}
+
+nav li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav li a {
+    text-decoration: none;
+}
+
+nav li a:hover {
+    text-decoration: underline;
+}
+
+nav li a:visited {
+    color: rgb(234, 0, 255);
+}
+
+ul, li {
+    padding-top: 0;
+    margin-top:0;
+}
