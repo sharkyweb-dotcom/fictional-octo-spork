@@ -31,12 +31,12 @@ available_probabilities <- c(
 )
 
 available_ports <- c(
-  'brick2for1',
-  'ore2for1',
-  'wheat2for1',
-  'sheep2for1',
-  'lumber2for1',
-  rep('any3for1',4)
+  'brick',
+  'ore',
+  'wheat',
+  'sheep',
+  'lumber',
+  rep('question',4)
 )
 
 generate_board <- function() {
