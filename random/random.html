@@ -23,17 +23,30 @@
     </nav>
     <div id='opening'></div>
     <center>
-        <div class='imgBoard board'>
+        <div class='imgBoard board' style='opacity: 1;'>
+            <div class="second hex-row">
+                <div class="portHex"></div>
+        
+                <div class="portHex"><div class='port'><div class='label'></div><img class='image'></div></div>
+        
+                <div class="portHex"></div>
+                <div class="portHex"><div class='port'><div class='label'></div><img class='image'></div></div>
+
+                <div class="portHex"></div>
+            </div>
             <div class="first hex-row">
+                <div class="portHex"></div>
                 <div id="imgHex" class="hex"><div id='propacircle'></div></div>
         
                 <div id="imgHex" class="hex"><div id='propacircle'></div></div>
         
                 <div id="imgHex" class="hex"><div id='propacircle'></div></div>
+                <div class="portHex"><div class='port'><div class='label'></div><img class='image'></div></div>
             </div>
         
             <br>
             <div class="second hex-row">
+                <div class="portHex"><div class='port'><div class='label'></div><img class='image'></div></div>
                 <div id="imgHex" class="hex"><div id='propacircle'></div></div>
         
                 <div id="imgHex" class="hex"><div id='propacircle'></div></div>
@@ -43,6 +56,7 @@
             </div>
             <br>
             <div class="third hex-row">
+                <div class="portHex"></div>
                 <div id="imgHex" class="hex"><div id='propacircle'></div></div>
         
                 <div id="imgHex" class="hex"><div id='propacircle'></div></div>
@@ -50,8 +64,10 @@
         
                 <div id="imgHex" class="hex"><div id='propacircle'></div></div>
                 <div id="imgHex" class="hex"><div id='propacircle'></div></div>
+                <div class="portHex"><div class='port'><div class='label'></div><img class='image'></div></div>
             </div>
             <div class="fourth hex-row">
+                <div class="portHex"><div class='port'><div class='label'></div><img class='image'></div></div>
                 <div id="imgHex" class="hex"><div id='propacircle'></div></div>
         
                 <div id="imgHex" class="hex"><div id='propacircle'></div></div>
@@ -60,10 +76,22 @@
                 <div id="imgHex" class="hex"><div id='propacircle'></div></div>
             </div>
             <div class="fifth hex-row">
+                <div class="portHex"></div>
                 <div id="imgHex" class="hex"><div id='propacircle'></div></div>
         
                 <div id="imgHex" class="hex"><div id='propacircle'></div></div>
                 <div id="imgHex" class="hex"><div id='propacircle'></div></div>
+                <div class="portHex"><div class='port'><div class='label'></div><img class='image'></div></div>
+            </div>
+            <div class="second hex-row">
+                <div class="portHex"></div>
+        
+                <div class="portHex"><div class='port'><div class='label'></div><img class='image'></div></div>
+        
+                <div class="portHex"></div>
+                <div class="portHex"><div class='port'><div class='label'></div><img class='image'></div></div>
+
+                <div class="portHex"></div>
             </div>
     </div>
     <div id='roadBoard' class='board'>
@@ -328,6 +356,7 @@
     </div>
     <button class='randomize' onclick="addImg();random();">Click Here to randomize!</button></center>
     <p id='refreshMessage'></p>
+    <script src="./intersection_adj_intersection.js"></script>
     <script src="./int_to_adj_road_map.js"></script>
     <script src="./randomPlayers.js"></script>
     <script src='./random.js'></script>

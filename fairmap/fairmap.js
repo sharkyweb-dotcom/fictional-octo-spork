@@ -2,6 +2,8 @@
 Object.values(document.getElementsByClassName('road')).forEach((road)=>{
     colorize(road.id,'transparent')
 })
+let porti;
+//ports = ['sheep2for1', 'ore2for1', 'lumber2for1', 'brick2for1', 'lumber2for1', 'brick2for1', 'any3for1', 'wheat2for1', 'any3for1']
 // Enter fair map lists here
 /*const mapOne=['brick','sheep','lumber','brick','ore','lumber','brick','brick','sheep','brick','brick','brick','brick','brick','brick','brick','brick','brick','brick'];
 const mapTwo=["brick", "desert", "lumber", "wheat", "lumber", "sheep", "ore", "lumber", "ore", "ore", "brick", "wheat", "brick", "wheat", "wheat", "sheep"];
@@ -229,10 +231,13 @@ let colorObj={
     orange:[0,2],
     white:[0,2]
 }
-
+function log(mes) {
+    console.log(mes)
+}
 let probIndex=0;
 let houseIndex=0;
 let roadIndex=0;
+let portIndex=0;
 function addImg(map) {
     let indexOfMap=0;
     map=tiles;
@@ -255,7 +260,27 @@ function addImg(map) {
         cop.innerHTML=probs[probIndex]
         probIndex++;
     })
-    probIndex=0;
+    // Ports
+    porti=0;
+        Object.values(document.getElementsByClassName('port')).forEach(()=>{
+            if (ports[portIndex]!=='any3for1') {
+            img(ports[portIndex].split('2')[0])
+            } else {
+                img('question')
+            }
+            log(portIndex)
+            log(ports[portIndex])
+            portIndex++;
+            porti++;
+        })
+    
+    //Delete, Intelligently, but not Austerely,Previous Exultant Roads and Settlements (DIAPERS)
+    if (!first) {
+        Object.values(document.getElementsByClassName('road')).forEach((road)=>{
+            colorize(road.id,'transparent')
+        })
+        Object.values(document.getElementsByClassName('settlement')).forEach(house=>house.remove())
+    }
     // Houses Or Settlements, Sacrosanct (HOSS)
     Object.entries(colorObj).forEach(pair=>{
         while (pair[1][0]!==pair[1][1]) {
@@ -273,19 +298,11 @@ function addImg(map) {
     //Roads Of Actual Daring (ROAD)
     Object.entries(colorObj).forEach(pair=>{
         while (pair[1][0]!==pair[1][1]) {
-            console.log(roads[roadIndex],pair[0])
             colorize(roads[roadIndex],pair[0])
             pair[1][0]++;
             roadIndex++;
         }
     })
-    //Delete, Intelligently, but not Austerely,,Previous Exultant Roads and Settlements (DIAPERS)
-    if (!first) {
-        Object.values(document.getElementsByClassName('road')).forEach((road)=>{
-            colorize(road.id,'transparent')
-        })
-        Object.values(document.getElementsByClassName('settlement')).forEach(house=>house.remove())
-    }
     colorObj={
         red:[0,2],
         blue:[0,2],
@@ -295,6 +312,36 @@ function addImg(map) {
     probIndex=0;
     houseIndex=0;
     roadIndex=0;
+    portIndex=0;
     first=false;
 }
 let page='fair';
+
+function c(v,i) {
+    let element=Object.values(document.getElementsByClassName('port'))[i]
+    element.id=`port${v}`
+}
+function img(val) {
+    // ports
+    let element=Object.values(document.getElementsByClassName('image'))[porti]
+        element.src=`../images/${val}.jpg`;
+        element.className=val+' image';
+        Object.values(document.getElementsByClassName('label'))[porti].innerHTML='2 : 1'
+        element.style.border='none'
+        if (val==='question') {
+            element.src=`../images/${val}.png`;
+            Object.values(document.getElementsByClassName('label'))[porti].innerHTML='3 : 1'
+            Object.values(document.getElementsByClassName('label'))[porti].style.color='purple'
+            element.style.border='3px solid black'
+        } else if (val==='wheat') {;
+            Object.values(document.getElementsByClassName('label'))[porti].style.color='black'
+        } else {
+            Object.values(document.getElementsByClassName('label'))[porti].style.color='lightgreen'
+        }
+}
+let cNum=0;
+let cArr=[6,1,1,5,2,5,3,4,3]
+cArr.forEach((cVal)=>{
+    c(cVal,cNum)
+    cNum++;
+})

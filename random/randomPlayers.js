@@ -194,15 +194,111 @@ for (let k=1;k<28;k++) {
     new SettlementFunction(selectTileNumber,findTopIntersections(),functionNumber)
     functionNumber++;
 }
+let permaSett=(numberSett,settCol)=>{
+    functionArray[numberSett].useSettleFunction(settCol)
+}
 
 for (let k=1;k<28;k++) {
     new SettlementFunction(selectBottomTileNumber,findBottomIntersections(),functionNumber)
     functionNumber++;
 }
+let settleArr=[3];
+let checked;
+let tempFuncArr=functionArray;
+let numArr=[];
+function refill() {
+    for (let i=0;i<54;i++) {
+        numArr.push(i+1);
+    }
+}
+refill()
+console.log(numArr)
+function setSubtract(colorSett) {
+    let chosenIndex=Math.floor(Math.random()*numArr.length);
+    let chosenNum=numArr[chosenIndex];
+    console.log(chosenNum)
+    permaSett(chosenNum-1,colorSett);
+    numArr.splice(chosenIndex,1)
+    distanceDict[chosenNum].forEach((ineligible)=>{
+        console.log(ineligible)
+        numArr.splice(numArr.indexOf(ineligible),1)
+    })
+    console.log(numArr)
+    let roadArray=settleRoadDict[chosenNum]
+    let randomIndex=Math.floor(Math.random()*roadArray.length)
+    let randomRoad=roadArray[randomIndex]
+    colorize(`${randomRoad}`,colorSett)
+}
+/*function subSett(colorSett) {
+    let indexSett=Math.floor(Math.random()*tempFuncArr.length)
+    permaSett(indexSett,colorSett)
+    tempFuncArr[indexSett].useSettleFunction=(indexSett)=>{
+        tempFuncArr[indexSett+1].useSettleFunction()
+    }
 
-function randomSettlement(col) {
+    distanceDict[indexSett+1].forEach((spot)=>{
+        spot--;
+        console.log(spot)
+        if (spot!==53) {
+            tempFuncArr[spot].useSettleFunction=(color)=>{
+                tempFuncArr[spot+1].useSettleFunction(color)
+            }
+        } else {
+            tempFuncArr[spot].useSettleFunction=(color)=>{
+                tempFuncArr[0].useSettleFunction(color)
+            }
+        }
+    })
+    let roadArray=settleRoadDict[indexSett]
+    let randomIndex=Math.floor(Math.random()*roadArray.length)
+    let randomRoad=roadArray[randomIndex]
+    colorize(`${randomRoad}`,colorSett)
+}*/
+
+
+function where(colorForSett) {
     randomSpot=Math.floor(Math.random()*53+1)
-    functionArray[randomSpot-1].useSettleFunction(col)
+    console.log('supp'+randomSpot)
+    settleArr.every(location=>{
+        console.log('loc: '+location)
+        if (location===randomSpot) {
+            where()
+            return true;
+        } else {
+            settleArr.push(randomSpot-1)
+            distanceDict[randomSpot].forEach((spot)=>{
+                settleArr.push(spot-1)
+            })
+            functionArray[randomSpot-1].useSettleFunction(colorForSett)
+            let roadArray=settleRoadDict[randomSpot]
+            let randomIndex=Math.floor(Math.random()*roadArray.length)
+            let randomRoad=roadArray[randomIndex]
+            colorize(`${randomRoad}`,colorForSett)
+            return false;
+        }
+    })
+}
+/*function makeSpot() {
+    randomSpot=Math.floor(Math.random()*53+1)
+    console.log('Selected spot:'+randomSpot)
+    settleArr.forEach((loc)=>{
+        console.log(loc+':'+randomSpot)
+        if (loc===randomSpot) {checked=false;/*console.log(randomSpot,false)}
+        console.log('loop3')
+    })
+}*/
+function randomSettlement(col) {
+    /*checked=true;
+    do {
+        makeSpot()
+        console.log('loop2')
+    } while (checked===false)
+    settleArr.push(randomSpot)
+    distanceDict[randomSpot].forEach((spot)=>{
+        settleArr.push(spot)
+    })
+    console.log('Settlement Array: '+settleArr)
+    functionArray[randomSpot-1].useSettleFunction(col)*/
     let roadArray=settleRoadDict[randomSpot]
     let randomIndex=Math.floor(Math.random()*roadArray.length)
     let randomRoad=roadArray[randomIndex]

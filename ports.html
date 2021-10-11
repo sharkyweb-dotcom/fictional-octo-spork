@@ -2,16 +2,92 @@
 <html>
 <head>
     <style>
-        #port {
-            background-color:teal;
+        .port {
+            position: absolute;
+            top:50vh;
+            left:50%;
+            transform-origin: top;
+            background-color:greenyellow;
+            position: relative;
             width:60px;
             height:55px;
             border-top-right-radius: 30px;
             border-top-left-radius: 30px;
+            overflow: hidden;
+            transition: transform 500ms linear;
+            background-color: black;
+        }
+        #port1 {
+            transform: rotate(30deg);
+        }
+        #port2 {
+            transform: rotate(90deg);
+        }
+        #port3 {
+            transform: rotate(150deg);
+        }
+        #port4 {
+            transform: rotate(210deg);
+        }
+        #port5 {
+            transform: rotate(270deg);
+        }
+        #port6 {
+            transform: rotate(330deg);
+        }
+        #label {
+            position:absolute;
+            width:100%;
+            top:5px;
+            text-align: center;
+            color: lightgreen;
+            text-shadow: 0 0 1px red;
+        }
+        .image {
+            width:60px;
+            height:55px;
         }
     </style>
 </head>
 <body>
-    <div id='port'></div>
+    <div class='port'><div id='label'></div><img class='sheep image'></div>
+    <button onclick=c(1)>1</button>
+    <button onclick=c(2)>2</button>
+    <button onclick=c(3)>3</button>
+    <button onclick=c(4)>4</button>
+    <button onclick=c(5)>5</button>
+    <button onclick=c(6)>6</button>
+    <br>
+    <button onclick='img("brick")'>brick</button>
+    <button onclick='img("sheep")'>sheep</button>
+    <button onclick='img("wheat")'>wheat</button>
+    <button onclick='img("lumber")'>lumber</button>
+    <button onclick='img("ore")'>ore</button>
+    <button onclick='img("question")'>3 for 1</button>
+    <script>
+        function c(v) {
+            Object.values(document.getElementsByClassName('port')).forEach(element => {
+                element.id=`port${v}`
+            });
+        }
+        function img(val) {
+            Object.values(document.getElementsByClassName('image')).forEach(element => {
+                element.src=`./images/${val}.jpg`;
+                element.className=val+' image';
+                document.getElementById('label').innerHTML='2 : 1'
+                element.style.border='none'
+                if (val==='question') {
+                    element.src=`./images/${val}.png`;
+                    document.getElementById('label').innerHTML='3 : 1'
+                    document.getElementById('label').style.color='purple'
+                    element.style.border='3px solid black'
+                } else if (val==='wheat') {;
+                    document.getElementById('label').style.color='black'
+                } else {
+                    document.getElementById('label').style.color='lightgreen'
+                }
+            });
+        }
+    </script>
 </body>
 </html>

@@ -1,10 +1,15 @@
 let first=true;
+let porti;
+let portIndex=0;
+let ports = ['sheep2for1', 'any3for1', 'ore2for1', 'any3for1', 'lumber2for1', 'brick2for1', 'any3for1', 'wheat2for1', 'any3for1']
+let colorList=['red','blue','orange','white']
 let colorObj={
     red:[0,2],
     blue:[0,2],
     orange:[0,2],
     white:[0,2]
 }
+//console.log(functionArray)
 function addImg() {
     brickCount=[0,3];
     wheatCount=[0,4];
@@ -34,21 +39,62 @@ function addImg() {
             colorize(road.id,'transparent')
         })
         Object.values(document.getElementsByClassName('settlement')).forEach(house=>house.remove())
+        tempFuncArr=functionArray;
     }
-    
+    numArr=[]
+    refill()
     Object.entries(colorObj).forEach(pair=>{
+        while (pair[1][0]!==pair[1][1]) {
+            setSubtract(pair[0])
+            pair[1][0]++;
+        }
+    })
+    //console.log(functionArray)
+    /*Object.entries(colorObj).forEach(pair=>{
+        while (pair[1][0]!==pair[1][1]) {
+            subSett(pair[0])
+            pair[1][0]++;
+        }
+    })*/
+    /*Object.entries(colorObj).forEach(pair=>{
+        while (pair[1][0]!==pair[1][1]) {
+            where(pair[0])
+            pair[1][0]++;
+        }
+    })*/
+    
+    /*Object.entries(colorObj).forEach(pair=>{
         while (pair[1][0]!==pair[1][1]) {
             randomSettlement(pair[0])
             pair[1][0]++;
         }
-    })
+    })*/
+    /*for (let i=0;i<2;i++) {
+        colorList.forEach((li)=>{
+            randomSettlement(li)
+            console.log('loop1')
+        })
+    }*/
     colorObj={
         red:[0,2],
         blue:[0,2],
         orange:[0,2],
         white:[0,2]
     }
+    // Ports
+    shuffleArray(ports)
+    porti=0;
+        Object.values(document.getElementsByClassName('port')).forEach(()=>{
+            if (ports[portIndex]!=='any3for1') {
+            img(ports[portIndex].split('2')[0])
+            } else {
+                img('question')
+            }
+            portIndex++;
+            porti++;
+        })
     first=false;
+    portIndex=0;
 }
 resourceList=[];
 let hexagon;
@@ -163,3 +209,32 @@ const randomTile=()=>{
     };
 } 
 let page='random'
+
+function c(v,i) {
+    let element=Object.values(document.getElementsByClassName('port'))[i]
+    element.id=`port${v}`
+}
+function img(val) {
+    // ports
+    let element=Object.values(document.getElementsByClassName('image'))[porti]
+        element.src=`../images/${val}.jpg`;
+        element.className=val+' image';
+        Object.values(document.getElementsByClassName('label'))[porti].innerHTML='2 : 1'
+        element.style.border='none'
+        if (val==='question') {
+            element.src=`../images/${val}.png`;
+            Object.values(document.getElementsByClassName('label'))[porti].innerHTML='3 : 1'
+            Object.values(document.getElementsByClassName('label'))[porti].style.color='purple'
+            element.style.border='3px solid black'
+        } else if (val==='wheat') {;
+            Object.values(document.getElementsByClassName('label'))[porti].style.color='black'
+        } else {
+            Object.values(document.getElementsByClassName('label'))[porti].style.color='lightgreen'
+        }
+}
+let cNum=0;
+let cArr=[6,1,1,5,2,5,3,4,3]
+cArr.forEach((cVal)=>{
+    c(cVal,cNum)
+    cNum++;
+})

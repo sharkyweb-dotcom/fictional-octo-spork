@@ -20,16 +20,29 @@
     
     <center>
         <div class='imgBoard board' style='opacity: 1;'>
+            <div class="second hex-row">
+                <div class="portHex"></div>
+        
+                <div class="portHex"><div class='port'><div class='label'></div><img class='image'></div></div>
+        
+                <div class="portHex"></div>
+                <div class="portHex"><div class='port'><div class='label'></div><img class='image'></div></div>
+
+                <div class="portHex"></div>
+            </div>
             <div class="first hex-row">
+                <div class="portHex"></div>
                 <div id="imgHex" class="hex"><div class='propacircle'></div></div>
         
                 <div id="imgHex" class="hex"><div class='propacircle'></div></div>
         
                 <div id="imgHex" class="hex"><div class='propacircle'></div></div>
+                <div class="portHex"><div class='port'><div class='label'></div><img class='image'></div></div>
             </div>
         
             <br>
             <div class="second hex-row">
+                <div class="portHex"><div class='port'><div class='label'></div><img class='image'></div></div>
                 <div id="imgHex" class="hex"><div class='propacircle'></div></div>
         
                 <div id="imgHex" class="hex"><div class='propacircle'></div></div>
@@ -39,6 +52,7 @@
             </div>
             <br>
             <div class="third hex-row">
+                <div class="portHex"></div>
                 <div id="imgHex" class="hex"><div class='propacircle'></div></div>
         
                 <div id="imgHex" class="hex"><div class='propacircle'></div></div>
@@ -46,8 +60,10 @@
         
                 <div id="imgHex" class="hex"><div class='propacircle'></div></div>
                 <div id="imgHex" class="hex"><div class='propacircle'></div></div>
+                <div class="portHex"><div class='port'><div class='label'></div><img class='image'></div></div>
             </div>
             <div class="fourth hex-row">
+                <div class="portHex"><div class='port'><div class='label'></div><img class='image'></div></div>
                 <div id="imgHex" class="hex"><div class='propacircle'></div></div>
         
                 <div id="imgHex" class="hex"><div class='propacircle'></div></div>
@@ -56,10 +72,22 @@
                 <div id="imgHex" class="hex"><div class='propacircle'></div></div>
             </div>
             <div class="fifth hex-row">
+                <div class="portHex"></div>
                 <div id="imgHex" class="hex"><div class='propacircle'></div></div>
         
                 <div id="imgHex" class="hex"><div class='propacircle'></div></div>
                 <div id="imgHex" class="hex"><div class='propacircle'></div></div>
+                <div class="portHex"><div class='port'><div class='label'></div><img class='image'></div></div>
+            </div>
+            <div class="second hex-row">
+                <div class="portHex"></div>
+        
+                <div class="portHex"><div class='port'><div class='label'></div><img class='image'></div></div>
+        
+                <div class="portHex"></div>
+                <div class="portHex"><div class='port'><div class='label'></div><img class='image'></div></div>
+
+                <div class="portHex"></div>
             </div>
     </div>
     <div id='roadBoard' class='board'>
@@ -73,7 +101,6 @@
                 <div class='placeholder'></div>
                 <div class='bottom-left bottom road'></div>
                 <div class='bottom-right bottom road'></div>
-                <div class='settlement'></div>
             </div>
     
             <div class="hex">
@@ -292,7 +319,7 @@
         <div class="second hex-row">
             <div class="hex settleHex"></div>
     
-            <div class="hex settleHex"></div>
+            <div class="hex settleHex" style='perspective: 0.1px;'></div>
             <div class="hex settleHex"></div>
     
             <div class="hex settleHex"></div>
