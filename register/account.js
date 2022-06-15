@@ -1,4 +1,4 @@
-accountList=[]
+
 let loginRequire=true;
 let loggedIn=false;
 let selectedAccount=false;
@@ -12,16 +12,12 @@ class Account {
         this._randomUsed=0;
         this._fairUsed=0;
         this._compromised=false;
-        accountList.push(this);
     } 
     static login() {
-        console.log('BB Here')
         if (loginRequire) {
         if (window.confirm('Would you like to login?')===true) {
             let selectedUsername=window.prompt('Username: ');
-            console.log(selectedUsername);
             let selectedPassword=window.prompt('Password: ');
-            console.log(selectedPassword);
             console.log(typeof selectedUsername,typeof selectedPassword)
             if (selectedUsername===null || selectedPassword===null) {
                 alert('Must enter username and password')
@@ -35,7 +31,7 @@ class Account {
                 }
             }
             accountList.forEach(account=>{
-            console.log(account)
+
             if (account._username===selectedUsername.toLowerCase() & account._password===selectedPassword.toLowerCase()) {
                 alert('You have been logged in.');
                 loggedIn=true;
@@ -45,6 +41,7 @@ class Account {
                 }
             } 
             })
+
             if (loggedIn===false) {
                 alert('This login information is not valid.');
                 if (page==='rate') {
@@ -92,4 +89,4 @@ function random() {
         console.log('BB '+selectedAccount._randomUsed)
     }
 }
-const seafarer=new Account('catanian','seafarer')
+accountList=[new Account('catanian', 'seafarer'),new Account('daemon', 'poiuyt'), new Account('rkaiii', 'rkaiii'),new Account("bram","grundel13")]
