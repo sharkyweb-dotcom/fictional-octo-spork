@@ -1,4 +1,3 @@
-
 let loginRequire=true;
 let loggedIn=false;
 let selectedAccount=false;
@@ -89,4 +88,4 @@ function random() {
         console.log('BB '+selectedAccount._randomUsed)
     }
 }
-accountList=[new Account("Finn's Best Friend","123456789"),new Account('catanian', 'seafarer'),new Account('daemon', 'poiuyt'), new Account('rkaiii', 'rkaiii'),new Account("bram","grundel13")]
+accountList=[new Account("finn's best friend","123456789"),new Account('catanian', 'seafarer'),new Account('daemon', 'poiuyt'), new Account('rkaiii', 'rkaiii'),new Account("bram","grundel13")]
